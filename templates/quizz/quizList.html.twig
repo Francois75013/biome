@@ -14,8 +14,8 @@
 
 
 
-  {% for theme in themes %}
-    <a href="{{ path('listquiz', {'themequiz':theme}) }}">{{ theme }}</a><br>
+  {% for quiz in quizlist %}
+    <a href="{{ path('presentationquiz', {'id':quiz.id }) }}">{{ quiz.question }}</a><br>
 
 {% endfor %}
 

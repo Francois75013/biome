@@ -10,7 +10,11 @@
 
 <main>
 <h1>Mon profil</h1>
+{{% if user is null %}}
+{{% redirect %}}
+{{% else %}}
 {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a><br>
  <img  src="{{ asset ('assets/')~app.user.avatar }}"/><br> 
+ {{% endif %}}
 </main>
 {% endblock %}

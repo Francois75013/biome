@@ -34,7 +34,7 @@ class Reponses
 
     /**
      * @ORM\ManyToOne(targetEntity=Questions::class, inversedBy="Reponses")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $questions;
 
