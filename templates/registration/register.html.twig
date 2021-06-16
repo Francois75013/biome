@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+{% for flashError in app.flashes('verify_email_error') %}
+	<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+{% endfor %}
+<header>
+	<div class="example-wrapper">
+		<nav>
+			<ul>
+				<li><a href="{{ path('index') }}">logo</a></li>
+				<li><a href="{{ path('quizz') }}">Les quiz</a></li>
+				<li><a href="{{ path('parents') }}">Pour les parents</a></li>
+				 <li><a href="{{ path('user') }}">Mon profil</a></li>
+				<li><a href="{{ path('security') }}">log</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h1>Inscription</h1>
+
+		{{ form_start(registrationForm) }}
+		{{ form_row(registrationForm.avatar, {
+            label: 'Choisis ton avatar: '
+		
+        }) }}
+
+
+		<img class="choice_avatar" data-name="user-frame-33.png" src="{{asset('assets/user-frame-33.png')}}"/>
+        <img class="choice_avatar" data-name="weight-loss@2x.png" src="{{asset('assets/weight-loss@2x.png')}}"/>      
+                       
+		{{ form_row(registrationForm.username, {
+            label: 'Choisis ton pseudo : '
+        }) }}
+		{{ form_row(registrationForm.plainPassword, {
+            label: 'Choisis ton mot de passe : '
+        }) }}
+		
+		{{ form_row(registrationForm.agreeTerms,{ 
+             label: 'J\'accepte les règles du site' 
+             }) }}
+
+        <button type="submit" class="btn">Ok</button>
+    {{ form_end(registrationForm,) }}
+    </main>
+	<script type="text/javascript">
+
+		let fieldHidden = document.getElementById('registration_form_avatar');
+		let images = document.getElementsByClassName('choice_avatar');
+		
+		for(var i = 0; i < images.length; i++) { 
+			 (function(index) {                     
+				 images[index].addEventListener("click", function() {                   
+					   fieldHidden.value = images[index].src.split('/')[4];                    
+					    })                 
+						})(i);            
+						 }
+		
+
+	</script>
+{% endblock %}
+{#  {'render_rest' : false} #}
+
+
