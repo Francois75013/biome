@@ -7,18 +7,7 @@
 {% for flashError in app.flashes('verify_email_error') %}
 	<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 {% endfor %}
-<header>
-	<div class="example-wrapper">
-		<nav>
-			<ul>
-				<li><a href="{{ path('index') }}">logo</a></li>
-				<li><a href="{{ path('quizz') }}">Les quiz</a></li>
-				<li><a href="{{ path('parents') }}">Pour les parents</a></li>
-				 <li><a href="{{ path('user') }}">Mon profil</a></li>
-				<li><a href="{{ path('security') }}">log</a></li>
-			</ul>
-		</nav>
-	</header>
+
 	<main>
 		<h1>Inscription</h1>
 

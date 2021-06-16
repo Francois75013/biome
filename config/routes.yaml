@@ -1,5 +1,5 @@
 index:
-    path: index
+    path: /
     controller: App\Controller\HomeController::index
 registration:
     path: register

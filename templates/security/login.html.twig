@@ -3,17 +3,7 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<header>
-<div class="example-wrapper">
-    <nav>
-    <ul>
-        <li><a href="{{ path('index') }}">logo</a></li>
-        <li><a href="{{ path('quizz') }}">Les quiz</a></li>
-       <li><a href="{{ path('parents') }}">Pour les parents</a></li>
-       <li><a href="{{ path('security') }}">log</a></li>
-    </ul>
-    </nav>
-</header>
+
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
