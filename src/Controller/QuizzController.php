@@ -44,22 +44,14 @@ class QuizzController extends AbstractController
         ]);
         
     }  
+    
 
-    /**
-     * @Route("/presentationquiz", name="presentationquiz")
-     */
-    public function presentationquiz(HttpFoundationRequest $request, QuizRepository $quizRepository) : Response{
-        
-    $quizQuestion = $quizRepository->findBy((array('quizlist' => $request->query->get(''))))
+}
 
 
-        return $this->render('quizz/presentationquiz.html.twig', [
-        ]);
-        
-    } 
 
  
-}
+
 
 
 
