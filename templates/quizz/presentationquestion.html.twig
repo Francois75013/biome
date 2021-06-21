@@ -10,14 +10,8 @@
 
 
 <main>
-<h1>Choisis ton thème</h1>
+<a href="{{ path('questions') }}"><h1>QUIZ</h1></a>
 
-
-
-  {% for theme in themes %}
-    <a href="{{ path('listquiz', {'themequiz':theme}) }}">{{ theme }}</a><br>
-
-{% endfor %}
 
 </main>
 
