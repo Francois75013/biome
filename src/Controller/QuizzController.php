@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Repository\QuizRepository;
+use App\Repository\QuestionsRepository;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 use Symfony\Component\HttpFoundation\Response;
@@ -39,19 +41,49 @@ class QuizzController extends AbstractController
 
         $quizList = $quizRepository->findBy(array('theme' => $request->query->get('themequiz')));
 
-        return $this->render('quizz/quizlist.html.twig', [
+        return $this->render('quizz/quizList.html.twig', [
             'quizlist' => $quizList
         ]);
         
     }  
-    
 
+
+    /**
+     * @Route("/presentationquiz", name="presentationquiz")
+     */
+    public function index2(QuestionsRepository $QuestionsRepository): Response
+    {
+        
+        $question = $QuestionsRepository->findAll();
+
+        $tabQuestion = array();
+
+        foreach($question as $rowQuestion){
+            if(!in_array($rowQuestion->getQuestion(), $tabQuestion)){
+                array_push($tabQuestion, $rowQuestion->getQuestion());
+            }
+        }
+
+        return $this->render('quizz/presentationquiz.html.twig', [
+            'question' => $tabQuestion
+        ]);
+    } 
+     /**
+     * @Route("/presentationquiz", name="presentationquiz")
+     */
+    public function question(HttpFoundationRequest $request, QuestionsRepository $QuestionsRepository) : Response{
+        
+
+        $tabQuestion = $QuestionsRepository->findBy(array('question' => $request->query->get('questionQuiz')));
+
+        return $this->render('quizz/presentationquiz.html.twig', [
+            'questions' => $tabQuestion
+        ]);
+        
+    }  
+
+   
 }
-
-
-
- 
-
 
 
 
