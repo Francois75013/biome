@@ -50,6 +50,8 @@ class QuizzController extends AbstractController
      */
     public function presentationquiz(HttpFoundationRequest $request, QuizRepository $quizRepository) : Response{
         
+    $quizQuestion = $quizRepository->findBy((array('quizlist' => $request->query->get(''))))
+
 
         return $this->render('quizz/presentationquiz.html.twig', [
         ]);
