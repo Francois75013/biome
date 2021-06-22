@@ -17,13 +17,13 @@ class QuizzController extends AbstractController
      */
     public function index(QuizRepository $quizRepository): Response
     {
-        
+
         $quiz = $quizRepository->findAll();
 
         $tabTheme = array();
 
-        foreach($quiz as $rowQuiz){
-            if(!in_array($rowQuiz->getTheme(), $tabTheme)){
+        foreach ($quiz as $rowQuiz) {
+            if (!in_array($rowQuiz->getTheme(), $tabTheme)) {
                 array_push($tabTheme, $rowQuiz->getTheme());
             }
         }
@@ -33,56 +33,32 @@ class QuizzController extends AbstractController
         ]);
     }
 
-     /**
+    /**
      * @Route("/quizzlist", name="listquiz")
      */
-    public function quizlist(HttpFoundationRequest $request, QuizRepository $quizRepository) : Response{
-        
+    public function quizlist(HttpFoundationRequest $request, QuizRepository $quizRepository): Response
+    {
+
 
         $quizList = $quizRepository->findBy(array('theme' => $request->query->get('themequiz')));
 
         return $this->render('quizz/quizList.html.twig', [
             'quizlist' => $quizList
         ]);
-        
-    }  
+    }
 
 
     /**
-     * @Route("/presentationquiz", name="presentationquiz")
+     * @Route("/startQuiz", name="startQuiz")
+     * @return Response
      */
-    public function index2(QuestionsRepository $QuestionsRepository): Response
+    public function index2()
     {
-        
-        $question = $QuestionsRepository->findAll();
+        $repo = $this->getDoctrine()->getRepository(Questions::class);
+        $questions = $repo->findAll();
 
-        $tabQuestion = array();
-
-        foreach($question as $rowQuestion){
-            if(!in_array($rowQuestion->getQuestion(), $tabQuestion)){
-                array_push($tabQuestion, $rowQuestion->getQuestion());
-            }
-        }
-
-        return $this->render('quizz/presentationquiz.html.twig', [
-            'question' => $tabQuestion
-        ]);
-    } 
-     /**
-     * @Route("/presentationquiz", name="presentationquiz")
-     */
-    public function question(HttpFoundationRequest $request, QuestionsRepository $QuestionsRepository) : Response{
-        
-
-        $tabQuestion = $QuestionsRepository->findBy(array('question' => $request->query->get('questionQuiz')));
-
-        return $this->render('quizz/presentationquiz.html.twig', [
-            'questions' => $tabQuestion
-        ]);
-        
-    }  
-
-   
+        return $this->render('startQuiz.html.twig', ['questions' => $questions]);
+    }
 }
 
 

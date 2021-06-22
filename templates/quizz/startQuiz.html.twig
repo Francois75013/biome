@@ -10,8 +10,13 @@
 
 
 <main>
-<a href="{{ path('questions') }}"><h1>QUIZ</h1></a>
 
+{% for question in questions %}
+    {{ questions.question }}
+    {% for reponse in questions.quiz_id %}
+        {{ reponses.reponse }}
+    {% endfor %}
+{% endfor %}
 
 </main>
 
