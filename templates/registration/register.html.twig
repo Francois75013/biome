@@ -18,8 +18,10 @@
         }) }}
 
 
-		<img class="choice_avatar" data-name="user-frame-33.png" src="{{asset('assets/user-frame-33.png')}}"/>
-        <img class="choice_avatar" data-name="weight-loss@2x.png" src="{{asset('assets/weight-loss@2x.png')}}"/>      
+		<img class="choice_avatar" data-name="avatar1" src="{{asset('assets/avatar1')}}"/>
+        <img class="choice_avatar" data-name="avatar2" src="{{asset('assets/avatar2')}}"/>      
+		<img class="choice_avatar" data-name="avatar3" src="{{asset('assets/avatar3')}}"/>
+        <img class="choice_avatar" data-name="avatar4" src="{{asset('assets/avatar4')}}"/>      
                        
 		{{ form_row(registrationForm.username, {
             label: 'Choisis ton pseudo : '
@@ -28,10 +30,7 @@
             label: 'Choisis ton mot de passe : '
         }) }}
 		
-		{{ form_row(registrationForm.agreeTerms,{ 
-             label: 'J\'accepte les règles du site' 
-             }) }}
-
+	
         <button type="submit" class="btn">Ok</button>
     {{ form_end(registrationForm,) }}
     </main>

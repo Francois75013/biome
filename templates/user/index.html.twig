@@ -11,10 +11,13 @@
 <main>
 <h1>Mon profil</h1>
 
-
+{% if app.user is null %}
+<a href="{{ path('security') }}">Connecte toi</a><br>
+{% else %}
 {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a><br>
- <img  src="{{ asset ('assets/')~app.user.avatar }}"/><br> 
+ {# <img  src="{{ asset ('assets/')~app.user.avatar }}"/><br> #}
  {{app.user.score}}
+{% endif %}
 
 </main>
 {% endblock %}

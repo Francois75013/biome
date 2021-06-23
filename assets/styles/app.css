@@ -1,4 +1,59 @@
-h1 {
+body {
+    background-color: lightgray;
+}
+.remove-btn {
+    margin-right: 0.5rem;
+  }
+  
+  .item-enter {
+    opacity: 0;
+  }
+  .item-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+  .item-exit {
+    opacity: 1;
+  }
+  .item-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  }
+  .searchContainer {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+ 
+  }
+  
+  .searchIcon {
+    padding: 0.5rem;
+    font-size: 2rem;
+    position: absolute;
+    right: 3px;
+    height: 100%;
+  }
+  
+  .searchBox {
+    border: 0;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    flex: 1;
+  }
+  
+  .highlistClass{
+    background-color: #B1E6EF;
+    color: black;
+    font-weight: bold;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .resultLine{
+    cursor: pointer;
+  }
+  
+  h1 {
     font-family: "Roboto";
     text-align: center;
     margin-bottom: 40px;
@@ -30,4 +85,3 @@ h1 {
     text-align: center;
     font-size: 16px;
   }
-  

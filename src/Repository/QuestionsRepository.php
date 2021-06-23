@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Questions;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query;
 
 /**
  * @method Questions|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,6 +20,17 @@ class QuestionsRepository extends ServiceEntityRepository
         parent::__construct($registry, Questions::class);
     }
 
+    public function findAllResult($id)
+    {
+        $lo = $this->createQueryBuilder('q')
+            ->select('q')
+            ->where('q.quiz = '.$id) 
+            ->join('q.Reponses', 'z')
+            ->addSelect('z')
+
+        ;
+        return $lo->getQuery()->getResult(Query::HYDRATE_ARRAY);
+    }
     // /**
     //  * @return Questions[] Returns an array of Questions objects
     //  */

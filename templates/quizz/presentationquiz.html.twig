@@ -10,14 +10,16 @@
 
 
 <main>
-<a href="{{ path('presentationquiz') }}"><h1>QUIZ</h1></a>
+
 
  
 
-  {% for question in tabQuestion %}
+  {% for quiz in quizlist %}
     
 
     <a href="{{ path('presentationquiz', { 'question' : quiz.question }) }}">Jouer</a><br>
+
+    
 
 {% endfor %}
 

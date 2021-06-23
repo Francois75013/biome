@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use Psr\Log\LoggerInterface;
 use App\Repository\QuizRepository;
 use App\Repository\QuestionsRepository;
-
+use App\Repository\ReponsesRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 use Symfony\Component\HttpFoundation\Response;
@@ -48,17 +50,61 @@ class QuizzController extends AbstractController
     }
 
 
-    /**
-     * @Route("/startQuiz", name="startQuiz")
-     * @return Response
-     */
-    public function index2()
-    {
-        $repo = $this->getDoctrine()->getRepository(Questions::class);
-        $questions = $repo->findAll();
 
-        return $this->render('startQuiz.html.twig', ['questions' => $questions]);
+    /** 
+     * @Route("/presentationquiz/{id}", name="presentationquiz")
+     */
+    public function presentationquiz($id, QuestionsRepository $questionRepository
+    ,  ReponsesRepository $reponsesRepository): Response
+    {
+
+        /* $repo = $this->getDoctrine()->getRepository(QuestionsRepository::class); */
+        $questions = $questionRepository->findAllResult($id);
+       /*   return new JsonResponse($questions);  */
+        /* $tabQuest = array(); */
+/*
+        foreach($questions as $rowQuestion)
+        if(!in_array($rowQuestion->getQuestion(),$tabQuest)){
+            array_push($tabQuest,$rowQuestion->getQuestion());
+        }
+
+        $reponses = $reponsesRepository->findAll();
+        $tabRep = array();
+
+        foreach($reponses as $rowReponse)
+        if(!in_array($rowReponse->getReponse(),$tabRep)){
+            array_push($tabRep,$rowReponse->getReponse());
+        }
+         */
+        return $this->render('quizz/startQuiz.html.twig', ['questions' => $questions,
+        'reponses' => []]);
+
+        
+
+
+
     }
+
+    /**
+     * @Route("/api/question/theme/search/{query}", methods={"GET"})
+     */
+    public function search($query, QuizRepository $quizRepository, LoggerInterface $logger)
+    {
+
+        //$this->denyAccessUnlessGranted("ROLE_USER");
+
+        $listQuiz = $quizRepository->findAllarray($query);
+        $logger->info($query);
+
+        return new JsonResponse($listQuiz);
+ 
+
+
+}
+
+
+
+ 
 }
 
 

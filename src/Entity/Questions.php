@@ -23,6 +23,11 @@ class Questions
      * @ORM\Column(type="string", length=255)
      */
     private $question;
+    
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image_question;
 
     /**
      * @ORM\ManyToOne(targetEntity=Quiz::class, inversedBy="Questions")

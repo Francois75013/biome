@@ -8,46 +8,19 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
 
-import React from"react";
+import React from "react";
 import { render } from 'react-dom';
-import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+import {Search} from "./components";
+import { CountdownCircleTimer } from './components'
 
-const renderTime = ({ remainingTime }) => {
-    if (remainingTime === 0) {
-      return <div className="timer">Too lale...</div>;
-    }
-  
-    return (
-      <div className="timer">
-        <div className="text">Remaining</div>
-        <div className="value">{remainingTime}</div>
-        <div className="text">seconds</div>
-      </div>
-    );
-  };
-  
+function Themes()
+{
+    return(
 
-  function App() {
-    return (
-      <div className="App">
-        <h1>
-          CountdownCircleTimer
-          <br/>
-          React Component
-        </h1>
-        <div className="timer-wrapper">
-          <CountdownCircleTimer
-            isPlaying
-            duration={20}
-            colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
-            onComplete={() => [true, 1000]}
-          >
-            {renderTime}
-          </CountdownCircleTimer>
+        <div style={{width: "30rem"}}>
+            <Search />
         </div>
-      </div>
-    );
-  }
-  const rootElement = document.getElementById("root");
-  render(<App />, rootElement);
-  
+    )
+     
+}
+render(<Themes />, document.getElementById("rootQuizz"));

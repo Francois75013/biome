@@ -15,7 +15,8 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Connecte toi</h1><br>
+    <h1 class="h3 mb-3 font-weight-normal">Pas encore de compte ? <a href="{{ path('registration') }}">Inscris toi !</a></li></h1>
     <label for="inputUsername">Username</label>
     <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
     <label for="inputPassword">Password</label>

@@ -21,12 +21,12 @@
 		<h1>ACCUEIL</h1>
 	
 		 <ul>
-        <li><a href="{{ path('quizz') }}">Commence à jouer</a></li>
+        <li><a href="{% if app.user is null %}{{ path('security') }}{% else %} {{ path('quizz') }}{% endif %}">Commence à jouer</a></li>
         <li><a href="{{ path('parents') }}">Pour les parents</a></li>
         <li><a href="{{ path('registration') }}">Crée ton profil</a></li>
 		<li><a href="{{ path('security') }}">log</a></li>
     </ul>
-	<div id="root"></div>
+	
 	
 </main>
 <footer>
