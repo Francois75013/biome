@@ -52,7 +52,7 @@ export function Search() {
     };
     const handleSelect = (id) => {
 
-      document.location.href="http://127.0.0.1:8000/presentationQuiz/{id}";
+      document.location.href="https://127.0.0.1:8000/home";
       console.log(`Vous avez cliqué sur : ${id}`);
       setShowList(false);
     };
