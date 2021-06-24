@@ -22,8 +22,7 @@
 	<ul>
 					 
         <li><a href="{{ path('home') }}">logo</a></li>
-        <li>{% if app.user is null %}<a href="{{ path('security') }}">Connecte toi</a>{% else %}<a href="{{ path('quizz') }}">Les quiz</a></li>
-        {% endif %}
+        <li><a href="{{ path('themes') }}">Les quiz</a></li>
 		<li><a href="{{ path('user') }}">Mon profil</a></li>
         <li><a href="{{ path('parents') }}">Pour les parents</a></li>
     </ul>

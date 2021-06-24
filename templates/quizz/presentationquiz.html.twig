@@ -17,9 +17,10 @@
   {% for quiz in quizlist %} #}
     
     {{ quiz.question}}
+          {% if app.user is null %}<a href="{{ path('security') }}">Jouer</a>{% else %} <a href="{{ path('startQuiz', {'id':quiz.id }) }}">Jouer</a>
+        {% endif %}
 
-    <a href="{{ path('startQuiz', {'id':quiz.id }) }}">Jouer</a><br>
-   {#  <a href="{{ path('presentationQuiz', {'id':quiz }) }}, {{ quiz.question }}">Jouer</a><br> #}
+
 
     
 

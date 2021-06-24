@@ -1,23 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Biome - Mon profil{% endblock %}
+{% block title %}Biome - Mon profil
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
 
-<main>
-<h1>Mon profil</h1>
+	<main>
+		<h1>Mon profil</h1>
 
-{% if app.user is null %}
-<a href="{{ path('security') }}">Connecte toi</a><br>
-{% else %}
-{{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a><br>
- {# <img  src="{{ asset ('assets/')~app.user.avatar }}"/><br> #}
- {{app.user.score}}
-{% endif %}
+		{% if app.user is null %}
+			<h1 class="h3 mb-3 font-weight-normal"><a href="{{ path('security') }}">Connecte toi</a></h1><br>
+			<h1 class="h3 mb-3 font-weight-normal">Pas encore de compte ?<a href="{{ path('registration') }}">Inscris toi !</a>
+			</li>
+		</h1>
+	{% else %}
+		{{ app.user.username }},
+		<a href="{{ path('app_logout') }}">Déconnexion</a><br>
+		{# <img  src="{{ asset ('assets/')~app.user.avatar }}"/><br> #}
+		{{app.user.score}}
+	{% endif %}
 
-</main>
-{% endblock %}
+</main>{% endblock %}
