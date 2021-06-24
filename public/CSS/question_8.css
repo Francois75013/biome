@@ -1,0 +1,205 @@
+/*  */
+/****************** debut navbar *******************/
+
+/************* les titres *****************/
+* {
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+    /* Visualisation des éléments */
+    /*border: 1px dotted rgba(0,0,0,0.3);*/
+}
+
+*:hover {
+    transition: all 0.2s ease 0s;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav .navbar-brand img {
+    height: 50px;
+    margin: 2em 0;
+}
+
+nav button.jouer {
+    background-color: #ff7255;
+    border: 1px solid #ff7255;
+    color: #fff;
+    transition: all 0.5s ease;
+    -webkit-box-shadow: 0px 3px 0px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav button.jouer:hover {
+    background-color: #fff;
+    color: #ff7255;
+    border: 1px solid #ff7255;
+}
+
+nav .navigation {
+    justify-content: flex-end;
+    gap: 40px;
+}
+
+nav nav .nav-link {
+    border-bottom: 2px solid transparent;
+}
+
+nav .nav-link.active,
+nav .nav-link:hover {
+    border-bottom: 2px solid #ff7255;
+}
+/* fond vagues */
+body{
+    background-image: url(../CSS/img/Vague_fond_HD.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:bottom;
+    min-height: 100vh;
+}
+/* fond blanc */
+.question_8_fond{
+    
+    background-color: white;
+    border-radius: 30px; 
+    max-width: 1320px;
+    margin: auto;
+    
+}
+/* question img */
+.question_8_img {
+    background-image: url(../CSS/img/question_8/question8.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 22.445em;
+    padding-top: 22.445em !important
+}
+/* texte */
+.question_8_prop,
+.question_8_txt, 
+.question_8_number{
+    text-align: center;
+    font-family: 'muli', sans-serif;
+    color: #2F3061 ;
+}
+/* nombre question */
+.question_8_number{
+    font-weight: 900;
+}
+.question_8_number span {
+    font-size: 2em;
+    padding: 0.20em;
+}
+/* texte de la question */
+.question_8_txt p{
+    font-size: 1.25em;
+    line-height: 1em;
+}
+/* textes propositions */
+.question_8_prop {
+    font-size: 0.938em;
+    border-style: 1px;
+    box-shadow: 4px 5px 0px 0px rgba(4, 4, 6, 0.15);
+    background-color: #ffffff;
+    display: block;
+    height: 100%;
+}
+input{
+    display: none;
+}
+.question_8_prop:hover,
+input:checked + .question_8_prop {
+    background-color: #2F3061;
+    color: white;
+}
+.question_8_prop1{
+    width: 37%;
+}
+.question_8_prop2{
+    width: 33%;
+}
+.question_8_prop3{
+    width: 41%;
+}
+
+
+
+/* bouton de validation */
+.question_8_valider {
+    text-align: center;
+    margin: 1em;
+    padding: 2em;
+    
+}
+.question_8_bouton {
+    box-shadow: 4px 5px 0px 0px rgba(4, 4, 5, 0.15);
+    border-radius: 30px;
+    padding: 0.5em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    border-style: hidden;
+    background-color: white;
+    
+/* txt bouton de validation */
+    font-family: 'nunito','sans-serif';
+    font-size: 1.25em;
+    font-weight: 800;
+    color: #FF7255;
+    
+}
+.question_8_icone {
+    width: 2.375em;
+    padding-left: 0.50em;
+
+}
+
+/* txt footer */
+.question_8_footer p{
+    font-family: 'muli','sans-serif';
+    font-size: 0.938em;
+    font-weight: normal;
+    color: #f9f9f9;
+    writing-mode: sideways-lr;
+    text-orientation: sideways;
+    position: fixed;
+    right: 0;
+    bottom: 1em;
+}
+.question_8_footer a {
+    text-decoration: underline;
+}
+@media (max-width: 1400px) {
+    .question_8_footer p {
+        writing-mode:horizontal-tb;
+        text-orientation: initial;
+        text-align: center;
+        position: initial;
+    }
+
+}

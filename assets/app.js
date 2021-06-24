@@ -9,9 +9,10 @@
 import './styles/app.css';
 
 import React from "react";
-import { render } from 'react-dom';
+import { render } from './components';
+import { renderTime } from "./components";
 import {Search} from "./components";
-import { CountdownCircleTimer } from './components'
+import { CountdownCircleTimer } from "./components" 
 
 function Themes()
 {
@@ -24,3 +25,28 @@ function Themes()
      
 }
 render(<Themes />, document.getElementById("rootQuizz"));
+
+function App() {
+    return (
+      <div className="App">
+       
+        <div className="timer-wrapper">
+          <CountdownCircleTimer
+            isPlaying
+            duration={20}
+            colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
+            onComplete={() => [true, 1000]}
+          >
+            
+            {renderTime}
+            
+          </CountdownCircleTimer>
+        </div>
+      </div>
+    );
+    
+  }
+
+
+/* const rootElement = document.getElementById("root");
+render(<App />, rootElement);  */

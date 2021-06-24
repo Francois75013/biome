@@ -24,10 +24,6 @@ class Questions
      */
     private $question;
     
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $image_question;
 
     /**
      * @ORM\ManyToOne(targetEntity=Quiz::class, inversedBy="Questions")
@@ -44,6 +40,8 @@ class Questions
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
+
+   
 
     public function __construct()
     {
@@ -118,6 +116,18 @@ class Questions
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getImageQuestion(): ?string
+    {
+        return $this->image_question;
+    }
+
+    public function setImageQuestion(?string $image_question): self
+    {
+        $this->image_question = $image_question;
 
         return $this;
     }

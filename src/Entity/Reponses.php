@@ -38,6 +38,8 @@ class Reponses
      */
     private $questions;
 
+ 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -87,6 +89,18 @@ class Reponses
     public function setQuestions(?Questions $questions): self
     {
         $this->questions = $questions;
+
+        return $this;
+    }
+
+    public function getImageReponse(): ?string
+    {
+        return $this->image_reponse;
+    }
+
+    public function setImageReponse(?string $image_reponse): self
+    {
+        $this->image_reponse = $image_reponse;
 
         return $this;
     }

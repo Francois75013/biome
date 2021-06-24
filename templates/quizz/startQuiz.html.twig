@@ -20,22 +20,59 @@
 
 	<main>
 
-		<div id="root"></div>
+		
 
-<h1>{{ question.question }}</h1><br>
-			
+		<div class="row">
+			<div class="col-2">
+				<p class="question_8_number">
+					<div id="root"></div>
+			</div>
+			<div class="col-sm-8 question_8_txt">
+				<p>{{ question.question }}</p><br>
+				
+
+				<form action="" method="POST">
+
+					{% for reponse in question.Reponses %}
+
+						<input id="r1" type="radio" name="selectReponse">
+						<label for="r1" class="p-3 border rounded-3 question_8_prop">
+							<div>{{ reponse.reponse }}</div>
+						</label><br>
+						
+					{% endfor %}
+					<button class="question_8_bouton" name="validateQuestion">Valider</button>
+				</div>
+			</div>
 
 
-			{% for reponse in question.Reponses %}
-				<p>{{ reponse.reponse }}</p><br>
-                {# {{ question.description }}<br>  #}
-			{# {{% if reponse.reponse == true %}} #}
+		</p>
+	</form>
 
-				{#   {% endif %}   #}
-			{% endfor %}
+	
 
-	</main>
-    <
+   {#{% if isset ($_POST('selectReponse')), 
+   isset ($_POST('validateQuestion'))
+         %}(
+	{$selectReponse = 'selectReponse';
+	$validateQuestion = 'validateQuestion';
+
+	{% if $selectReponse is true && $validateQuestion is true %}{
+		{% if condition %}{% endif %}
 
 
-{% endblock %}
+	}
+	
+	{% endif %} 
+						 
+		
+					 }
+					 {% else %}
+						 {
+							echo'error';
+		
+						 }
+					{% endif %}  #}
+	
+
+</main>{% endblock %}

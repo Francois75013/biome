@@ -1,11 +1,11 @@
 
 
 import React from"react";
-import { render } from 'react-dom';
-import { CountdownCircleTimer } from 'react-countdown-circle-timer';
+import { rootElement } from "react-dom";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 const renderTime = ({ remainingTime }) => {
-    if (remainingTime === 0 || clickOnAnswer()) {
+    if (remainingTime === 0 ) {
       document.clearTimeout(CountdownCircleTimer)
       return <div className="timer">C'est fini !</div>;
       
@@ -20,20 +20,14 @@ const renderTime = ({ remainingTime }) => {
     );
   };
 
-  function clickOnAnswer(){
-    
-  }
-
-  document.addEventListener('click', clickOnAnswer);
-
-  function App() {
+/*   function App() {
     return (
       <div className="App">
        
         <div className="timer-wrapper">
           <CountdownCircleTimer
             isPlaying
-            duration={5}
+            duration={20}
             colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
             onComplete={() => [true, 1000]}
           >
@@ -47,6 +41,9 @@ const renderTime = ({ remainingTime }) => {
     
   }
 
+  const rootElement = document.getElementById("root");
+  render(<App />, rootElement); */
   
- const rootElement = document.getElementById("root");
-  render(<App />, rootElement); 
+
+  
+  

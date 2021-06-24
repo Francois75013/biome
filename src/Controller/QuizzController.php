@@ -98,7 +98,7 @@ class QuizzController extends AbstractController
                 break;
             }
         };
-
+     
         return $this->render('quizz/startQuiz.html.twig', ['question' => $question,
         'reponses' => []]);
 
