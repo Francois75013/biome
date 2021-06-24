@@ -13,15 +13,17 @@
 
 
  
+{# 
+  {% for quiz in quizlist %} #}
+    
+    {{ quiz.question}}
 
-  {% for quiz in quizlist %}
+    <a href="{{ path('startQuiz', {'id':quiz.id }) }}">Jouer</a><br>
+   {#  <a href="{{ path('presentationQuiz', {'id':quiz }) }}, {{ quiz.question }}">Jouer</a><br> #}
+
     
 
-    <a href="{{ path('presentationquiz', { 'question' : quiz.question }) }}">Jouer</a><br>
-
-    
-
-{% endfor %}
+{# {% endfor %} #}
 
 </main>
 

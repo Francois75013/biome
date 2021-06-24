@@ -10,12 +10,13 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 
 class QuizzController extends AbstractController
 {
     /**
-     * @Route("/quizz", name="quizz")
+     * @Route("/themes", name="themes")
      */
     public function index(QuizRepository $quizRepository): Response
     {
@@ -30,7 +31,7 @@ class QuizzController extends AbstractController
             }
         }
 
-        return $this->render('quizz/index.html.twig', [
+        return $this->render('quizz/themes.html.twig', [
             'themes' => $tabTheme
         ]);
     }
@@ -51,39 +52,59 @@ class QuizzController extends AbstractController
 
 
 
+    
+     
     /** 
-     * @Route("/presentationquiz/{id}", name="presentationquiz")
+     * @Route("/presentationQuiz/{id}", name="presentationQuiz")
      */
-    public function presentationquiz($id, QuestionsRepository $questionRepository
-    ,  ReponsesRepository $reponsesRepository): Response
+    public function presentationQuiz($id, QuizRepository $quizRepository, Session $session): Response
     {
 
+
         /* $repo = $this->getDoctrine()->getRepository(QuestionsRepository::class); */
-        $questions = $questionRepository->findAllResult($id);
+        $quiz = $quizRepository->findOneById($id);
        /*   return new JsonResponse($questions);  */
-        /* $tabQuest = array(); */
-/*
-        foreach($questions as $rowQuestion)
-        if(!in_array($rowQuestion->getQuestion(),$tabQuest)){
-            array_push($tabQuest,$rowQuestion->getQuestion());
-        }
 
-        $reponses = $reponsesRepository->findAll();
-        $tabRep = array();
+       $session->set("quizId", $quiz->getId());
+       $session->set("tour", 0); // session initialisé à 0 
+       $session->set("score", 0); // score initialisé à 0 
+       $session->set("questionPassed", ''); // pour ne pas repéter les questions
+     
+        return $this->render('quizz/presentationQuiz.html.twig', ['quiz' => $quiz
+        ]);
 
-        foreach($reponses as $rowReponse)
-        if(!in_array($rowReponse->getReponse(),$tabRep)){
-            array_push($tabRep,$rowReponse->getReponse());
-        }
-         */
-        return $this->render('quizz/startQuiz.html.twig', ['questions' => $questions,
+     }
+
+     /** 
+     * @Route("/startQuiz/{id}", name="startQuiz")
+     */
+    public function startQuiz($id, QuestionsRepository $questionRepository
+    ,  ReponsesRepository $reponsesRepository, Session $session): Response
+    {
+
+        $tabQuestionPased = explode(',', $session->get('questionPassed'));
+
+        $question = null;
+
+        $questions = $questionRepository->findBy(array('quiz' => $id));
+
+        foreach($questions as $rowQuestion){
+            if(!in_array($rowQuestion->getId(), $tabQuestionPased)){
+                $question = $rowQuestion;
+
+                $newStringTabPassed = $session->get('questionPassed') . ',' . $rowQuestion->getId();
+                $session->set('questionPassed', $newStringTabPassed);
+
+                break;
+            }
+        };
+
+        return $this->render('quizz/startQuiz.html.twig', ['question' => $question,
         'reponses' => []]);
 
-        
+     }
 
 
-
-    }
 
     /**
      * @Route("/api/question/theme/search/{query}", methods={"GET"})
