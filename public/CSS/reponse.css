@@ -1,7 +1,3 @@
-/*  */
-/****************** debut navbar *******************/
-
-/************* les titres *****************/
 * {
     box-sizing: border-box;
     outline: none;
@@ -73,8 +69,8 @@ nav .nav-link:hover {
     border-bottom: 2px solid #ff7255;
 }
 /* fond vagues */
-body{
-    background-image: url(../CSS/img/Vague_fond_HD.png);
+.reponse_body{
+    background-image: url(../images/images_reponse/vague_fond_hd.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position:bottom;
@@ -91,7 +87,7 @@ body{
 }
 /* question img */
 .reponse_img {
-    background-image: url(../CSS/img/question1.png);
+    background-image: url(../images/images_reponse/question_1.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
@@ -134,59 +130,58 @@ body{
     text-align: center;
 }
 
-
-
-
-
-
-
 /* bouton suivant */
-.reponse_questionsuivante{
-    margin-top: 3.75em;
-}
-.reponse_questionsuivante p{
-    text-align: center;
-}
-.reponse_questionsuivante a{
-    font-family: 'Nunito', 'sans-serif';
+.reponse_questionsuivante {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    font-family: 'nunito', sans-serif;
     font-size: 1.25em;
     font-weight: 800;
-    color: #FF7255;
-    background-image: url(../CSS/img/picto_bouton_suivant/BoutonA.png), url(../CSS/img/picto_bouton_suivant/BoutonC.png), url(../CSS/img/picto_bouton_suivant/BoutonB.png);
-    background-position-x: left, right, left;
-    background-repeat: no-repeat, no-repeat, repeat;
-    padding-right: 3.375em;
-    padding-left: 0.938em;
+    color: #ff7255;
+}
+.reponse_questionsuivante span {
     display: inline-block;
-    line-height: 3.625em;
+    vertical-align: middle;
+    line-height: 73px;
+    background-image: url(../images/images_reponse/suivante-body.png);
+}
+.reponse_questionsuivante:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 73px;
+    background-image: url(../images/images_reponse/suivante1.png);
+}
+.reponse_questionsuivante:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 70px;
+    height: 73px;
+    background-image: url(../images/images_reponse/suivante1.png);
+    background-position: center right;
+}
+.reponse_questionsuivante span:hover {
+    text-decoration: underline 2px;
+}
+.reponse_suivante p {
+    text-align: center;
+    color: #ff7255;
+    padding: 2em;
 }
 
-
-.reponse_questionsuivante a:hover
-{
-    text-transform:underline;
-}
-/* txt footer */
-.reponse_footer p{
-    font-family: 'muli','sans-serif';
-    font-size: 0.938em;
-    font-weight: normal;
-    color: #f9f9f9;
-    writing-mode: sideways-lr;
-    text-orientation: sideways;
-    position: fixed;
-    right: 0;
-    bottom: 1em;
-}
-.reponse_footer a {
-    text-decoration: underline;
-}
 @media (max-width: 1400px) {
-    .reponse_footer p {
-        writing-mode:horizontal-tb;
-        text-orientation: initial;
-        text-align: center;
-        position: initial;
+    .reponse_img {
+        background-image: url(../images/images_reponse/question_1_mobile.png);
     }
-
+}
+@media (max-width:700px){
+    .reponse_img {
+        padding-top:12em !important;
+    }
+    .reponse_txt{
+        font-size: 16px;
+    }
 }

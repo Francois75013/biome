@@ -9,6 +9,7 @@ use App\Repository\ReponsesRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
@@ -69,6 +70,8 @@ class QuizzController extends AbstractController
        $session->set("tour", 0); // session initialisé à 0 
        $session->set("score", 0); // score initialisé à 0 
        $session->set("questionPassed", ''); // pour ne pas repéter les questions
+       $session->set("userReponse", 0);
+       $session->set("gReponse", 0);
      
         return $this->render('quizz/presentationQuiz.html.twig', ['quiz' => $quiz
         ]);
@@ -79,8 +82,17 @@ class QuizzController extends AbstractController
      * @Route("/startQuiz/{id}", name="startQuiz")
      */
     public function startQuiz($id, QuestionsRepository $questionRepository
-    ,  ReponsesRepository $reponsesRepository, Session $session): Response
+    ,  ReponsesRepository $reponsesRepository, Session $session, Request $request): Response
     {
+
+        if(!empty($request->request)){
+
+            if($request->request->get('selectReponse') == 1){
+                $session->get('score', $session->get('score') + 15);
+
+            }
+
+        }
 
         $tabQuestionPased = explode(',', $session->get('questionPassed'));
 

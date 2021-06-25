@@ -4,20 +4,82 @@
 
 {% block body %}
 	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/parents_v1.css">
+    <link rel="stylesheet" href="https://use.typekit.net/unw5dxt.css">
+	</style>	
+	<!--Debut du header-->
+
+    <!--Mettre le header-->
+
+<!--Fin du header-->
 	
 	<main>
-		<h1>POUR LES PARENTS</h1>
+
+<!--Debut du corps-->
+
+    <!--Banniere-->
+		 <div class="parents_couverture">
+        <h2 class="container">Pour les parents</h2>
+    </div>
+
+    <div class="container parents_main">
+        
+        <!--Section1-->
+        <div class="row d-flex align-items-center parents_section">
+            <div class="col-sm-5 text-center">
+                <img class="parents_img img-fluid" src="../images/image_parents/logo_ademe.jpg" alt="Logo ADEME">
+            </div>
+            <div class="col-sm-7">
+                <h2 class="parents_h2">Qui sommes-nous ?</h2>
+                <p class="parents_p">Nous sommes une entreprise d’édition de jeux éducatifs et nous mettons à disposition des élèves du cycle élémentaire, de leurs parents et de leurs professeurs une plateforme de quiz éducatifs sur le thème de l’écologie en partenariat avec l’Education Nationale et l’ADEME.</p>
+            </div>
+        </div>
+
+        <!--Section2-->
+        <div class="row d-flex align-items-center parents_section parents_reverse">
+            <div class="col-sm-7">
+                <h2 class="parents_h2">Quelles sont nos valeurs ?</h2>
+                <p class="parents_p">Nous nous engageons pour rendre l’éducation accessible à tous, notamment par le digital, et aider nos enfants à appréhender le monde de demain.</p>
+                <p class="parents_p">Nous voulons faire découvrir l'écologie et des gestes du quotidien responsables aux enfants par le jeu, la découverte et le plaisir d'apprendre.</p>
+            </div>
+            <div class="col-sm-5 text-center">
+                <img class="parents_img img-fluid" src="../public/images/image_parents/robot_loupe_2.png" alt="Image robot">
+            </div>
+        </div>
+        
+        <!--Section3-->
+        <div class="row d-flex align-items-center parents_section">
+            <div class="col-sm-5 text-center">
+                <img class="parents_img img-fluid" src="../images/image_parents/robot_question.png" alt="Image robot">
+            </div>
+            <div class="col-sm-7">
+                <h2 class="parents_h2">Comment fonctionnent nos quiz?</h2>
+                <p class="parents_p">Chaque enfant pourra apprendre ou tester ses connaissances sur des thèmes variés comme le recyclage, la gestion des déchets, la pollution.</p>
+                <p class="parents_p">Chaque bonne réponse lui rapporte des points qui lui permettront d'accéder à de nouveaux quiz.</p>
+                <p class="parents_p">N'hésitez pas à découvrir le site avec lui pour échanger ensemble et faire de belles découvertes !</p>
+            </div>
+        </div>
+		 <!--Section4-->
+        <div class="row d-flex align-items-center parents_section parents_reverse">
+            <div class="col-sm-7">
+                <h2 class="parents_h2">S'amuser en toute tranquillité</h2>
+                <p class="parents_p">Sans téléchargement ni installation, notre site permet à votre enfant de créer un compte anonyme pour enregistrer ses scores.</p>
+                <p class="parents_p">Pour qu'il puisse apprendre et s'amuser en toute tranquillité, notre site est sans publicité ne demande aucune information personnelle.</p>
+            </div>
+            <div class="col-sm-5 text-center">
+                <img class="parents_img img-fluid" src="../images/image_parents/robot_jongle_2.png" alt="Image robot">
+            </div>
+        </div>
+    </div>
+
+<!--Fin du corps-->
+
+<!--Debut du footer-->
+    
+    <!--Mettre le grand footer-->
+    
+<!--Fin du footer-->
 	</main>
 
 {% endblock %}

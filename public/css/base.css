@@ -1,0 +1,428 @@
+* {
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+    font-family: 'muli';
+    /* Visualisation des éléments */
+    /*border: 1px dotted rgba(0,0,0,0.3);*/
+}
+*:hover{
+    transition: all 0.2s ease 0s;
+}
+html{
+    font-size: 62.5%;
+}
+.body-accueil p{
+    font-family: 'muli','sans-serif';
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+a,
+a:hover,
+a:visited,
+a:active{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    padding: 0;
+    list-style: none;
+}
+/****************** debut bannière *******************/
+.banniere {
+    background-image: url(../images/images_accueil/banniere_hd.jpg);
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/************* les titres *****************/
+.accueil_h1{
+    font-size: 130px;
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    padding-top: 0;
+    font-weight:900;
+    text-transform: uppercase;
+    color: white;
+    filter: drop-shadow(0 6px 0 rgba(4, 4, 5, 0.16));
+}
+.accueil_h2{
+    font-weight:500;
+    font-size: 20px;
+    font-family: "Muli", Arial, Helvetica, sans-serif;
+    padding-top: 7em;
+    color: white;
+}
+.accueil_h3{
+  font-weight:500;
+  font-size: 20px;
+  font-family: "Muli", Arial, Helvetica, sans-serif;
+  color: white;
+}
+.accueil_bouton a{
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  border: solid 3px white;
+  border-radius: 30px;
+  padding: 0.6em 2em;
+  display: inline-block;
+  margin-top: 4em;
+  margin-bottom: 6em;
+}
+
+/************** SECTION 2 *******************/
+.accueil_section_2{
+  margin-top: 10em;
+  margin-bottom: 10em;
+}
+.accueil_robot{
+    width: 60%;
+}
+.accueil_robot_h2{
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: 3em;
+  margin-bottom: 1em;
+  color: #2F3061;
+}
+.accueil_robot_p{
+  font-family: "Muli", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2F3061;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 1em;
+}
+/****************** bouton créer ton profil ****************/   
+.accueil_bouton_profil{
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 22em;
+  margin-top: 2em;
+  background-color: #2F3061;
+  border-radius: 30px;
+  filter: drop-shadow(0 6px 0 rgba(4, 4, 5, 0.16));
+}
+.accueil_bouton_profil span{
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 1.7em;
+  color: white;
+  font-weight: 600;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+  margin-left: 2em;
+}
+.accueil_bouton_profil img{
+  width: 3em;
+  height: 3em;
+  align-self: center;
+  margin-right: 2em;
+}
+/************** fin SECTION 2 *******************/
+
+.titre-section-3 h2{
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+}
+.content .ms-1 .avatar{
+  background-image: url(../images/images_accueil/avatar_1.png);
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+  border: solid 1px white;
+  background-color: white;
+  background-size: 50%;
+  background-position: center;
+}
+.content .ms-2 .avatar{
+  background-image: url(../images/images_accueil/avatar_2.png);
+  width: 130px;
+  height: 130px;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  margin-top: 10px; 
+  border: solid 1px white;
+  background-color: white;
+  background-size: 60%;
+  background-position: center;
+}
+.content .ms-3 .avatar{
+  background-image: url(../images/images_accueil/avatar_3.png);
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+  border: solid 1px white;
+  background-color: white;
+  background-size: 40%;
+  background-position: center;
+}
+.couronne-accueil{
+  margin-top: 3em;
+}
+.couronne-accueil img,
+.couronne-accueil2 img{
+  width: 4em;
+}
+.accueil_nom{
+  font-family: "Muli", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+.accueil_valeur{
+  font-family: "Muli", Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+}
+.score-ligne-accueil{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+.score-ligne-accueil-fondnone{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  /*background-color: rgba(0,0,0,0.1);
+  border-radius: 20px;*/
+}
+                
+.section-3 .content {
+    background-image: linear-gradient(-126deg,#A87BE6, #6168AF);
+    padding: 40px;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+}
+.section-3 .meilleurs-scores {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+.score-accueil{
+  padding-top: 15px;
+}
+.section-3 .scores {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.ms-1 .ms-2 .ms-3{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section-3 .scores .score-ligne {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+.accueil_rang{
+  font-family: "Muli", Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  padding-top: 0.4em;
+  padding-left: 1em;
+}
+.accueil_gagnant{
+  font-family: "Muli", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  padding-top: 0.4em;
+}
+.score-valeur{
+  font-family: "Muli", Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  padding-top: 0.4em;
+}
+
+/************************ fin section 3 *****************/
+
+/***************************** section 4 parents *********************/
+.banniereparent{
+    background-image: url(../images/images_accueil/vague_fond_hd.png);
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 10em;
+}
+.banniereparent h2{
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+    padding-top: 5em;
+    padding-bottom: 2em;
+}
+.banniereparent h3{
+    font-family: "Muli", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    color: white;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 60%;
+}
+/**************** bouton en savoir plus ***************************/
+.section-4 a{
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2F3061;
+  background-color: white;
+  border-radius: 30px;
+  padding: 0.6em 2em;
+  display: inline-block;
+  margin-top: 3em;
+  margin-bottom: 6em;
+  filter: drop-shadow(0 6px 0 rgba(4, 4, 5, 0.16));
+}
+
+
+@media screen and (min-width:480px) and (max-width:960px){
+  .accueil_robot{
+    width: 70%;
+  }
+  .accueil_robot_h2{
+    margin-top: 0;
+    font-size: 25px;
+  }
+  .accueil_robot_p{
+    font-size: 16px;
+  }
+  .accueil_bouton_profil{
+    margin-top: 1em;
+  }
+  .section-3 .content{
+    padding: 26px;
+  }
+  .titre-section-3 h2{
+    font-size: 25px;
+    margin-top: 1.5em;
+  }
+  .accueil_rang{
+    font-size: 15px;
+    font-weight: 700;
+    padding-top: 0.3em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .accueil_gagnant{
+    font-size: 13px;
+    font-weight: 500;
+    padding-top: 0.5em;
+    padding-right: 1em;
+  }
+  .score-valeur{
+    font-size: 15px;
+    font-weight: 700;
+    padding-top: 0.3em;
+    padding-right: 0.5em;
+  }
+  .score-ligne-accueil{
+    border-radius: 15px;
+  }
+  .score-ligne-accueil img,
+  .score-ligne-accueil-fondnone img{
+    width: 25px;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .accueil_h1{
+    font-size: 70px;
+  }
+  .accueil_h2{
+    font-size: 14px;
+  }
+  .accueil_h3{
+    font-size: 14px;
+  }
+  .accueil_bouton a{
+    font-size: 14px;
+  }
+  .accueil_robot_h2{
+    font-size: 20px;
+  }
+  .accueil_robot_p{
+    font-size: 16px;
+  }
+  .titre-section-3 h2{
+    font-size: 20px;
+  }
+  .section-3 .meilleurs-scores{
+    gap: 8px;
+  }
+  .content .ms-1 .avatar,
+  .content .ms-3 .avatar{
+    width: 70px;
+    height: 70px;
+  }
+  .content .ms-2 .avatar{
+    width: 100px;
+    height: 100px;
+  }
+  .accueil_nom{
+    font-size: 18px;
+  }
+  .accueil_valeur{
+    font-size: 18px;
+  }
+  .accueil_rang{
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 0.3em;
+    padding-left: 1em;
+  }
+  .accueil_gagnant{
+    font-size: 17px;
+    font-weight: 500;
+    padding-top: 0.5em;
+  }
+  .score-valeur{
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 0.3em;
+  }
+  .section-3 .content{
+    padding: 30px;
+  }
+  .banniereparent h2{
+    font-size: 20px;
+    padding-top: 5em;
+    padding-bottom: 2em;
+  }
+  .banniereparent h3{
+      font-size: 18px;
+      font-weight: 200;
+      margin-top: 1em;
+      margin-bottom: 2em;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      width: 90%;
+  }
+}

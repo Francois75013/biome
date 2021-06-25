@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 16px;
+    margin: 0;
+}
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+}
+/*Debut du footer*/
+.footer_petit_bleu{
+    font-family: "Muli", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    color: #2F3061;
+    writing-mode: sideways-lr;
+    text-orientation: sideways;
+    position: fixed;
+    right: 0;
+    bottom: 1em;
+}
+/*Fin du footer*/
+
+/*Media query Ipad*/
+@media screen and (min-width:480px) and (max-width:960px){
+    .footer_petit_bleu{
+        writing-mode: horizontal-tb;
+        text-orientation: initial;
+        text-align: center;
+        position: initial;
+        margin: 2em 1em;
+    }
+}
+
+/*Media query Iphone X*/
+@media screen and (max-width:480px) {
+    .footer_petit_bleu{
+        writing-mode: horizontal-tb;
+        text-orientation: initial;
+        text-align: center;
+        position: initial;
+        margin: 2em 1em;
+    }
+}

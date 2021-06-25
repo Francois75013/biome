@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 16px;
+    margin: 0;
+}
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+}
+/*Debut du footer*/
+.parents_footer{
+    margin: 1em auto;
+}
+.parents_footer_p{
+    font-family: "Muli", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    color: #2F3061;
+}
+.parents_footer_p a{
+    text-decoration: none;
+    color: #2F3061;
+}
+.parents_footer_img{
+    max-width: 4em;
+}
+.parents_footer_bis{
+    display: none;
+}
+/*Fin du footer*/
+
+/*Media query Iphone X*/
+@media screen and (max-width:480px) {
+    .parents_footer_p{
+        font-size: 12px;
+    }
+    .parents_footer_img{
+        max-width: 3em;
+    }
+    .parents_footer{
+        display: none;
+    }
+    .parents_footer_bis{
+        display: block;
+        font-family: "Muli", Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        color: #2F3061;
+        text-align: center;
+    }
+}

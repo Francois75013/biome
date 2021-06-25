@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+    /* Visualisation des éléments */
+    /*border: 1px dotted rgba(0,0,0,0.3);*/
+}
+
+*:hover {
+    transition: all 0.2s ease 0s;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+/* fond vagues */
+.fin_body{
+    background-image: url(../images/images_fin/vague_fond_hd.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:bottom;
+    min-height: 100vh;
+}
+/* fond blanc */
+.fin_fond{
+    
+    background-color: white;
+    border-radius: 30px; 
+    max-width: 1320px;
+    margin: auto;
+    
+}
+/* question img */
+.fin_img {
+    background-image: url(../images/images_fin/fin.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 22.445em;
+    padding-top: 22.445em !important
+}
+.fin_titre{
+    font-family: 'muli','sans-serif';
+    text-align: center;
+    color: #2F3061 ;
+    font-size: 2.188em;
+    font-weight: 900;
+}
+.fin_soustitre{
+    font-family: 'muli','sans-serif';
+    text-align: center;
+    color: #2F3061;
+    font-weight: 700;
+    font-size: 1.25em;
+}
+.fin_nombre {
+    font-family: 'muli','sans-serif';
+    color: #2F3061;
+    font-size: 3.75em;
+    font-weight: 900;
+    text-align: center;
+}
+.fin_nombre img {
+    width: 1.75em;
+}
+
+/* boutons rejouer */
+
+.fin_liens p {
+    text-align: center;
+    padding: 2em;
+}
+.fin_rejouer,
+.fin_jouerautre{
+    font-family: 'nunito','sans-serif';
+    font-size: 18px;
+    box-shadow: 0px 5px 0px 0px rgba(4, 4, 5, 0.15);
+    border-radius: 30px;
+    border-style: hidden;
+}
+.fin_rejouer{
+    color: #FF7255;
+    background-color: white;
+    padding: 0.5em 4em;
+    margin-right: 1em;
+}
+.fin_rejouer span:hover{
+    text-decoration: underline;
+}
+.fin_jouerautre{
+    color: white;
+    background-color: #FF7255;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+}
+.fin_jouerautre span:hover{
+    text-decoration: underline;
+}
+
+@media (max-width: 1400px) {
+    .fin_img {
+        background-image: url(../images/images_fin/fin_mobile.png);
+    }
+    .fin_rejouer,
+    .fin_jouerautre{
+    width: 100%;
+    }
+}
+@media (max-width:576px){
+    .fin_img {
+        padding-top:12em !important;
+    }
+    .fin_liens a{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1em;
+    }
+
+}

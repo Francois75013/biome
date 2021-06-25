@@ -28,7 +28,7 @@
 	{% else %}
 		{{ app.user.username }},
 		<a href="{{ path('app_logout') }}">Déconnexion</a><br>
-		{# <img  src="{{ asset ('assets/')~app.user.avatar }}"/><br> #}
+		<img  src="{{ asset('assets/')~app.user.avatar }}"/>
 		{{app.user.score}}
 	{% endif %}
 

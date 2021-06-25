@@ -35,13 +35,13 @@
 
 					{% for reponse in question.Reponses %}
 
-						<input id="r1" type="radio" name="selectReponse">
+						<input id="r1" type="radio" name="selectReponse" required="required" value="{{ reponse.isTrue }}">
 						<label for="r1" class="p-3 border rounded-3 question_8_prop">
 							<div>{{ reponse.reponse }}</div>
 						</label><br>
 						
 					{% endfor %}
-					<button class="question_8_bouton" name="validateQuestion">Valider</button>
+					<button class="validate" name="validate">Valider</button>
 				</div>
 			</div>
 
@@ -51,28 +51,9 @@
 
 	
 
-   {#{% if isset ($_POST('selectReponse')), 
-   isset ($_POST('validateQuestion'))
-         %}(
-	{$selectReponse = 'selectReponse';
-	$validateQuestion = 'validateQuestion';
-
-	{% if $selectReponse is true && $validateQuestion is true %}{
-		{% if condition %}{% endif %}
-
-
-	}
-	
-	{% endif %} 
-						 
-		
-					 }
-					 {% else %}
-						 {
-							echo'error';
-		
-						 }
-					{% endif %}  #}
+   
 	
 
-</main>{% endblock %}
+</main>
+
+{% endblock %}

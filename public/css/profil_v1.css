@@ -1,0 +1,330 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 16px;
+    background-color: #F2F2F7;
+    background-image: url(../images/images_profil/trame_hd_2.png);
+    margin: 0;
+}
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+}
+/*Debut du header*/
+
+
+/*Fin du header*/
+
+/*Debut du corps*/
+.profil_main{
+    background-image: linear-gradient(45deg, #484A9F, #9094FF);
+    border-radius: 25px;
+    margin-top: 9.5em;
+    margin-bottom: 4em;
+    padding: 2em;
+    position: relative;
+}
+
+/*Debut avatar+parametres*/
+.profil_avatar{
+    text-align: center;
+    margin-top: -7em;
+}
+.profil_avatar img{
+    max-width: 10em;
+    display: block;
+    margin: 0 auto;
+}
+.profil_avatar h2{
+    font-family: "Muli", Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: #2F3061;
+    background-color: white;
+    border-radius: 25px;
+    display: inline-block;
+    padding-top: 0.6em;
+    padding-bottom: 0.4em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+}
+.profil_parametre{
+    position: absolute;
+    top: 2em;
+    right: 2em;
+}
+.profil_parametre img{
+    max-width: 4em;
+    filter: drop-shadow(0 4px 0 rgba(4, 4, 5, 0.16));
+}
+/*Fin avatar+parametres*/
+
+/*Debut tableaux*/
+.profil_tableaux{
+    display: flex;
+    font-family: "Muli", Arial, Helvetica, sans-serif;
+    color: #2F3061;
+    gap: 2em;
+}
+.profil_gauche{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 2em;
+}
+
+/*Tableau niveau*/
+.profil_niveau{
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+}
+.profil_flex{
+    display: flex;
+    justify-content: space-around;
+}
+.profil_bloc{
+    display: block;
+    flex: 1;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+.profil_h3{
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+.profil_cadre_niveau{
+    background-color: #2F3061;
+    color: white;
+    font-size: 20px;
+    padding-top: 0.5em;
+    padding-bottom: 0.4em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    border-radius: 25px;
+}
+.profil_argent{
+    font-size: 22px;
+    font-weight: 800;
+}
+.profil_argent img{
+    max-width: 2em;
+    vertical-align: middle;
+}
+.profil_progres{
+    max-width: 13em;
+}
+
+/*Tableau theme*/
+.profil_theme{
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+}
+.profil_groupe{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.profil_groupe img{
+    max-width: 4em;
+    margin-top: 12px;
+}
+.profil_carte{
+    width: 45%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    filter: drop-shadow(0 6px 0 rgba(4, 4, 5, 0.16));
+}
+.profil_A{
+    background-image: url(../images/images_profil/vague_theme.png),
+    linear-gradient(-120deg, #FF7255, #FFC9A7);
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.profil_B{
+    background-image: url(../images/images_profil/vague_theme.png),
+    linear-gradient(-120deg, #557DE8, #C1FFD6);
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.profil_theme_h3{
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #2F3061;
+    font-weight: 600;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.profil_droite{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+}
+
+/*Tableau classement*/
+.profil_rank{
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: white;
+    background-color: #565796;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 0.5em auto;
+    padding: 0.8em 1.2em;
+}
+.profil_rank_nom{
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 1em;
+    padding-right: 2em;
+}
+.profil_rank img{
+    max-width: 2em;
+    vertical-align: middle;
+    padding-left: 0.4em;
+}
+.profil_rank_bis{
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: white;
+    background-image: linear-gradient(90deg, #2F3061, #333D91);
+    border-radius: 20px;
+    display: inline-block;
+    margin: 0.5em auto;
+    padding: 0.8em 1.2em;
+}
+.profil_rank_nom_bis{
+    font-size: 22px;
+    font-weight: 600;
+    padding-left: 1.5em;
+    padding-right: 4.5em;
+}
+.profil_rank_bis img{
+    max-width: 2.5em;
+    vertical-align: middle;
+    padding-left: 0.4em;
+}
+/*Fin tableaux*/
+
+/*Fin du corps*/
+
+/*Debut du footer*/
+
+
+/*Fin du footer*/
+
+
+/*Media query Ipad*/
+@media screen and (min-width:480px) and (max-width:960px){
+    .profil_tableaux{
+        display: unset;
+    }
+    .profil_groupe img{
+        margin-top: 30px;
+    }
+    .profil_theme{
+        margin-bottom: 2em;
+    }
+    .profil_rank{
+        font-size: 16px;
+    }
+    .profil_rank_nom{
+        font-size: 18px;
+    }
+    .profil_rank img{
+        max-width: 2em;
+        vertical-align: middle;
+        padding-left: 0.4em;
+    }
+    .profil_rank_bis{
+        font-size: 18px;
+    }
+    .profil_rank_nom_bis{
+        font-size: 20px;
+        padding-right: 2.5em;
+    }
+    .profil_rank_bis img{
+        max-width: 2.5em;
+        vertical-align: middle;
+        padding-left: 0.4em;
+    }
+    .profil_rank+.profil_rank{
+        margin-bottom: 2em;
+    }
+}
+
+/*Media query Iphone X*/
+@media screen and (max-width:480px) {
+    .profil_avatar h2{
+        font-size: 20px;
+    }
+    .profil_tableaux{
+        display: unset;
+    }
+    .profil_flex{
+        display: unset;
+    }
+    .profil_carte{
+        width: 90%;
+        margin-bottom: 1em;
+    }
+    .profil_carte+.profil_carte{
+        margin-bottom: 2em;
+    }
+    .profil_droite{
+        margin-top: 2em;
+    }
+    .profil_bloc{
+        padding-bottom: 0;
+    }
+    .profil_bloc+.profil_bloc{
+        padding-bottom: 2em;
+    }
+    .profil_rank{
+        font-size: 16px;
+    }
+    .profil_rank_nom{
+        font-size: 14px;
+    }
+    .profil_rank img{
+        max-width: 2em;
+        vertical-align: middle;
+        padding-left: 0.4em;
+    }
+    .profil_rank_bis{
+        font-size: 18px;
+    }
+    .profil_rank_nom_bis{
+        font-size: 16px;
+        padding-right: 2.5em;
+    }
+    .profil_rank_bis img{
+        max-width: 2.5em;
+        vertical-align: middle;
+        padding-left: 0.4em;
+    }
+    .profil_rank+.profil_rank{
+        margin-bottom: 2em;
+    }
+}
