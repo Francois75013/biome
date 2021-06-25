@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="../css/syledebarredemenu.css"/>
+
+<div class="header-fixed-home">
+        <div class="container">
+          <header class="header-accueil">
+            <input class="menu-btn" type="checkbox" id="menu-btn"/>
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <a href="{{ path('home') }}" class="logo"><img src="../images/images_barre_menu/logo_header.png"/></a>
+            <ul class="menu">
+              
+              
+              <li>
+                <div class="flex-search">
+                  <input type="search" id="seach-input" name="search-input" class="search-input"/>
+                </div>
+              </li>
+              <div id="rootQuizz"></div>
+              <!-- barre de recherche-->
+              
+              <li><a href="{{ path('parents') }}"</a></li>
+              <li><a href="{{ path('user') }}">Mon profil</a></li>
+              <li><a href="{{ path('themes') }}" class="button-accueil">Commencer à jouer</a></li>
+            </ul>
+          </header>
+        </div>
+    </div>

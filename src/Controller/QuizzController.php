@@ -90,8 +90,19 @@ class QuizzController extends AbstractController
             if($request->request->get('selectReponse') == 1){
                 $session->get('score', $session->get('score') + 15);
 
+
             }
 
+        }
+
+        
+
+        $tour = $session->get('tour');
+        $tour = $tour + 1;
+        $session->set('tour', $tour);
+        
+        if($tour < 11){
+            return $this->render('quizz/startQuiz.html.twig');
         }
 
         $tabQuestionPased = explode(',', $session->get('questionPassed'));
@@ -142,9 +153,9 @@ class QuizzController extends AbstractController
 
 
 
-/* 
-$user = $this->getUser();
+
+/* $user = $this->getUser();
 $score = $user->getScore();
 
 $score = $score + $nouvelleValeurdequizz;
-$$user->setScore($score); */
+$$user->setScore($score);  */

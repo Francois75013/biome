@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Biome - Pour les parents{% endblock %}
+{% block stylesheets %}
 
-{% block body %}
-	<style>
+	
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="../public/css/parents_v1.css">
+    <link rel="stylesheet" href="../css/parents_v1.css">
     <link rel="stylesheet" href="https://use.typekit.net/unw5dxt.css">
-	</style>	
+		
+	{% endblock %}
+	{% block body %}
 	<!--Debut du header-->
 
     <!--Mettre le header-->
@@ -44,7 +46,7 @@
                 <p class="parents_p">Nous voulons faire découvrir l'écologie et des gestes du quotidien responsables aux enfants par le jeu, la découverte et le plaisir d'apprendre.</p>
             </div>
             <div class="col-sm-5 text-center">
-                <img class="parents_img img-fluid" src="../public/images/image_parents/robot_loupe_2.png" alt="Image robot">
+                <img class="parents_img img-fluid" src="../images/image_parents/robot_loupe_2.png" alt="Image robot">
             </div>
         </div>
         

@@ -34,15 +34,6 @@ class QuizRepository extends ServiceEntityRepository
     
 
 
-    public function findAllArray($query)
-    {
-        $qb = $this
-            ->createQueryBuilder('a')
-            ->select('a')
-            ->orderBy('a.question', 'asc')
-            ->where('a.question LIKE :query')
-            ->setParameter('query', '%' . $query . '%');
-       return $qb->getQuery()->getResult(Query::HYDRATE_ARRAY);
 
     }
 
@@ -74,4 +65,4 @@ class QuizRepository extends ServiceEntityRepository
         ;
     }
     */
-}
+

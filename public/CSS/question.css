@@ -37,7 +37,7 @@ ul {
 
 /* fond vagues */
 .question_body{
-    background-image: url(../images/images_question/vague_fond_hd.png);
+    background-image: url(/images/images_question/vague_fond_hd.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position:bottom;
@@ -54,7 +54,7 @@ ul {
 }
 /* question img */
 .question_img {
-    background-image: url(../images/images_question/question_1.png);
+    background-image: url(/images/images_question/question_1.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
@@ -117,6 +117,7 @@ input:checked + .question_prop {
     padding-left: 1.5em;
     border-style: hidden;
     background-color: white;
+    text-decoration: none ;
     
 /* txt bouton de validation */
     font-family: 'nunito','sans-serif';
@@ -124,6 +125,7 @@ input:checked + .question_prop {
     font-weight: 800;
     color: #FF7255;
 }
+
 .question_bouton:hover{
     text-decoration: underline 2px;
 }

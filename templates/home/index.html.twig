@@ -1,24 +1,213 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Biome - Accueil
-{% endblock %}
+{% block title %}Biome - Accueil{% endblock %}
 
-{% block body %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
+
+	{% block stylesheets %}
+	<link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,400,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+   <!--adobe font muli-->
+   <link rel="stylesheet" href="https://use.typekit.net/fen5oto.css">
+
+   <!--gfont nunito-->
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/base.css"/>
+       {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+	 {% block body %}
 	
-	<main>
-		<h1>ACCUEIL</h1>
+<!--Debut du header-->
+
+   
+
+  <!--Fin du header-->
+
+    <!-- Bannière -->
+    <main>
+      <div class="banniere">
+        <div class="text-center">
+          <h2 class=" accueil_h2">Bienvenue sur</h2>
+          <h1 class=" accueil_h1">BIOME</h1>
+          <h3 class="accueil_h3">Biome est un site de quiz pour en apprendre plus sur l'écologie.</h3>
+          <h3 class="accueil_h3">A toi de trouver les bonnes réponses dans le temps imparti !</h3>
+            <div class="accueil_bouton">
+              <a class="nav-link" href="{{ path('themes') }}">Commencer à jouer</a>
+            </div>
+        </div>
+      </div>
+	  <!-- section 2 -->
+    <section class="accueil_section_2">
+      <div class="container">
+        <div class="row" style="width: 100%"> 
+          <!-- colonne gauche -->
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+            <img class="accueil_robot" src="../images/images_accueil/robot_fond_hd.png"/>
+          </div>
+          <!-- colone droite -->
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+            <h2 class="accueil_robot_h2">Aide Bibi en trouvant les bonnes réponses</h2>
+            <p class="accueil_robot_p">Deviens incollable sur l'écologie avec Bibi le robot et atteins le plus haut niveau !</p>
+            <p class="accueil_robot_p">Chaque bonne réponse te donne des points !</p>
+            <a href="" class="accueil_bouton_profil">
+              <span>Créer ton profil</span>
+              <img src="../images/images_accueil/icone_profil.png" alt="picto profil"></a>
+          </div>
+        </div>
+    </section>
+	 <!-- section 3 -->
+    <section class="section-3">
+      <div class="container">
+        <div class="content">
+          <div class="titre-section-3">
+            <h2>Viens défier les meilleurs scores</h2>
+          </div>
+          <div class="meilleurs-scores">
+            <!-- bulle 1 -->
+            <div class="ms-1">
+              <div class="couronne-accueil"><img src="../images/images_accueil/couronne_argent.png"/></div>
+              <div class="avatar">
+              </div>
+              <div class="score-accueil">
+                <div class="accueil_nom">Bubulle</div>
+                <div class="accueil_valeur">350tps</div>
+              </div>
+            </div>
+            <!-- bulle 2 -->
+            <div class="ms-2">
+              <div class="couronne-accueil2"><img src="../images/images_accueil/couronne_or.png"/></div>
+              <div class="avatar">
+              </div>
+              <div class="score-accueil">
+                <div class="accueil_nom">Bubulle</div>
+                <div class="accueil_valeur">350tps</div>
+              </div>
+            </div>
+			 <!-- bulle 3 -->
+            <div class="ms-3">
+              <div class="couronne-accueil"><img src="../images/images_accueil/couronne_bronze.png"/> </div>
+                <div class="avatar">
+                 </div>
+              <div class="score-accueil">
+                <div class="accueil_nom">Bubulle</div>
+                <div class="accueil_valeur">350tps</div>
+              </div>
+            </div>
+          </div>
+		  <!-- scores colonnes -->
+          <div class="jetons row g-3 mt-5" style="width: 100%">
+            <div class="col-md-4">
+              <div class="score-ligne-accueil">
+                <div class="accueil_rang">4</div>
+                <div class="accueil_gagnant">BUBULLE</div>
+                <div class="score-valeur">350pts</div>
+                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="score-ligne-accueil-fondnone">
+                <div class="accueil_rang">5</div>
+                <div class="accueil_gagnant">BUBULLE</div>
+                <div class="score-valeur">350pts</div>
+                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="score-ligne-accueil">
+                <div class="accueil_rang">6</div>
+                <div class="accueil_gagnant">BUBULLE</div>
+                <div class="score-valeur">350pts</div>
+                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="score-ligne-accueil-fondnone">
+                <div class="accueil_rang">7</div>
+                <div class="accueil_gagnant">BUBULLE</div>
+                <div class="score-valeur">350pts</div>
+                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+              </div>
+            </div>
+			 <div class="col-md-4">
+              <div class="score-ligne-accueil">
+                <div class="accueil_rang">8</div>
+                <div class="accueil_gagnant">BUBULLE</div>
+                <div class="score-valeur">350pts</div>
+                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="score-ligne-accueil-fondnone">
+                <div class="accueil_rang">9</div>
+                <div class="accueil_gagnant">BUBULLE</div>
+                <div class="score-valeur">350pts</div>
+                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="score-ligne-accueil">
+                <div class="accueil_rang">10</div>
+                <div class="accueil_gagnant">BUBULLE</div> 
+                <div class="score-valeur">350pts</div>
+                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="score-ligne-accueil-fondnone">
+                <div class="accueil_rang">11</div>
+                <div class="accueil_gagnant">BUBULLE</div>
+                <div class="score-valeur">350pts</div>
+                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="score-ligne-accueil">
+                <div class="accueil_rang">12</div>
+                <div class="accueil_gagnant">BUBULLE</div>
+                <div class="score-valeur">350pts</div>
+                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+              </div>
+			  </div>
+         
+          </div>
+        </div>
+    </section>
+        <!-- section parents -->
+    <section class="section-4">
+      <div class="banniereparent">
+        <div class="text-center">
+          <h2>Pour les parents</h2>
+          <h3>
+            Biome est une plateforme de quiz développée en paretenariat avec l'Eduction Nationale et l'ADEME pour sensibiliser les enfants à l'écologie et au développement durable.
+          </h3>
+          <a href="#">En savoir plus</a>
+        </div>
+      </div>
+    </section>
+
+  <!--Debut du footer-->
+    
+    <!--Mettre le grand footer-->
+    
+  <!--Fin du footer-->
+    </main>
+
+
+
+		
 	
 		 <ul>
         <li><a href="{% if app.user is null %}{{ path('security') }}{% else %} {{ path('themes') }}{% endif %}">Commence à jouer</a></li>

@@ -3,57 +3,108 @@
 {% block title %}Biome - Les thèmes
 {% endblock %}
 
-{% block body %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
+
+{% block stylesheets %}
 
 
-	<main>
+	<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-		
-
-		<div class="row">
-			<div class="col-2">
-				<p class="question_8_number">
-					<div id="root"></div>
-			</div>
-			<div class="col-sm-8 question_8_txt">
-				<p>{{ question.question }}</p><br>
-				
-
-				<form action="" method="POST">
-
-					{% for reponse in question.Reponses %}
-
-						<input id="r1" type="radio" name="selectReponse" required="required" value="{{ reponse.isTrue }}">
-						<label for="r1" class="p-3 border rounded-3 question_8_prop">
-							<div>{{ reponse.reponse }}</div>
-						</label><br>
-						
-					{% endfor %}
-					<button class="validate" name="validate">Valider</button>
-				</div>
-			</div>
+	<!--link css-->
+	<link
+	rel="stylesheet" href="/css/question.css">
 
 
-		</p>
-	</form>
+	<!--adobe font muli-->
+	<link
+	rel="stylesheet" href="https://use.typekit.net/fen5oto.css">
 
-	
+	<!--gfont nunito-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-   
-	
-
-</main>
 
 {% endblock %}
+{% block body %}
+	<body class="p-3 question_body">
+
+		<!--Debut du header-->
+
+		<!--Mettre le header-->
+
+		<!--Fin du header-->
+
+			<main>
+
+				<div class="container-lg p-3 question_fond question_img"> <div
+					class="row">
+					<!--nombre question-->
+					<div class="col-2">
+						<p class="question_number">
+							<span>1</span>/10</p>
+					</div>
+
+					<div class="col-sm-8">
+						<p class="question_txt">{{ question.question }}</p>
+
+						<div
+							class="col-2"><!--timer-->
+						</div>
+
+						<!--4 propositions-->
+						<form action="" method="POST">
+							<div class="row gy-3">
+
+								<div class="col-sm-6 gy-5">
+									<div>
+
+										{% for reponse in question.Reponses %}
+
+											<input class="mb-4" id="r{{ reponse.id }}" type="radio" name="selectReponse" required="required" value="{{ reponse.isTrue }}">
+											<label for="r{{ reponse.id }}" class="p-3 border border rounded-pill question_prop">
+												<div>{{ reponse.reponse }}</div>
+											</label>
+
+										{% endfor %}
+
+									</div>
+								</div>
+							</div>
+
+
+							<p class="question_valider">
+								<button class="question_bouton" name="button">Valider<img class="question_icone" src="/images/images_question/valider.png" alt="valider"></button>
+							</p>
+						</div>
+					</form>
+				</main>
+
+				<!--Debut du footer-->
+
+			<!--Mettre le petit footer blanc-->
+
+				<!--Fin du footer-->
+
+
+				{# 		<div class="row">
+											<div class="col-2">
+												<p class="question_8_number">
+													<div id="root"></div>
+											</div>
+											<div class="col-sm-8 question_8_txt">
+												<p>{{ question.question }}</p><br>
+												 #}
+				{# 
+							<form action="" method="POST"> {% for reponse in question.Reponses %}
+				
+								<input id="r1" type="radio" name="selectReponse" required="required" value="{{ reponse.isTrue }}">
+								<label for="r1" class="p-3 border rounded-3 question_8_prop">
+									<div>{{ reponse.reponse }}</div>
+								</label><br>
+				
+							{% endfor %}
+							<button class="validate" name="validate">Valider</button>
+						</div>
+					</body>
+				</div></p></form></main> #}
+			{% endblock %}

@@ -3,20 +3,16 @@
 {% block title %}Biome - Choix du quiz {% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+
 
 
 <main>
 
 
  
-{# 
-  {% for quiz in quizlist %} #}
+
     
-    {{ quiz.question}}
+    <h1>{{ quiz.question}}</h1>
           {% if app.user is null %}<a href="{{ path('security') }}">Jouer</a>{% else %}<a href="{{ path('startQuiz', {'id':quiz.id }) }}{% endif %}">Jouer</a>
         
 
@@ -24,7 +20,7 @@
 
     
 
-{# {% endfor %} #}
+
 
 </main>
 
