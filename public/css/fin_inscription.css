@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  transition: all 0.2s ease 0s;
+}
+/************ début barre menu ************/
+
+/************** fin de la barre de menu ****************/
+
+.body-inscription{
+  background-image: url(../images/images_fin_inscription/trame_hd_2.png);
+  background-color: #f2f2f7;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  height: 100vh;
+}
+.titre-inscription h2{
+  text-align: center;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #2F3061;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+.titre-inscription h3{
+  text-align: center;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #2F3061;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  margin-bottom: 50px;
+}
+.container-inscription{
+  background-color: white;
+  padding-bottom: 4em;
+  margin: 0 auto;
+  max-width: 1320px;
+}
+.va-jouer{
+  background-color: #2F3061;
+  border-radius: 25px;
+  border: none;
+  text-align: center;
+  margin: 1em auto;
+  filter: drop-shadow(0 6px 0 rgba(4, 4, 5, 0.16));
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0.6em 2em;
+  width: 15%;
+}
+.va-jouer a{
+  color: white;
+  text-decoration: none;
+}
+.image-compris{
+  text-align: center;
+}
+.image-compris img{
+  margin-top: 4em;
+}
+
+/*Media query Ipad*/
+@media screen and (min-width:480px) and (max-width:960px){
+  .container-inscription{
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
+
+/*Media query Iphone X*/
+@media screen and (max-width:480px) {
+  .container-inscription{
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  .image-compris img{
+    width: 200px;
+  }
+  .titre-inscription h2{
+    font-size: 20px;
+  }
+  .titre-inscription h3{
+    font-size: 18px;
+  }
+  .va-jouer{
+    font-size: 16px;
+    width: 40%;
+  }
+}

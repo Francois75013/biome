@@ -7,14 +7,15 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
-
+import Search from "./components/Search";
 import React from "react";
-import { render } from './components';
-import { renderTime } from "./components";
-import {Search} from "./components";
-import { CountdownCircleTimer } from "./components" 
+import { ReactDOM } from "react-dom"; 
+/* import { render } from './components';
+import { renderTime } from "./components"; */
+//import {Search} from "./components";
+/* import { CountdownCircleTimer } from "./components"  */
 
-function Themes()
+function App()
 {
     return(
 
@@ -24,9 +25,9 @@ function Themes()
     )
      
 }
-render(<Themes />, document.getElementById("rootQuizz"));
+ReactDOM.render(<App />, document.getElementById("rootQuizz"));
 
-function App() {
+/* function App() {
     return (
       <div className="App">
        
@@ -50,3 +51,4 @@ function App() {
 export default App;
 const rootElement = document.getElementById("root");
 render(<App />, rootElement); 
+ */

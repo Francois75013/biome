@@ -70,7 +70,7 @@ body{
     filter: drop-shadow(0 13px 0 rgba(4, 4, 5, 0.16));
 }
 .choix_A{
-    background-image: url(../images/images_choix_quiz/illu_quiz_1.png);
+    background-image: url(/images/images_choix_quiz/illu_quiz_1.png);
     background-color: #ffffff;
     background-position: top;
     background-size: contain;

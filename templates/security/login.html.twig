@@ -1,44 +1,73 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Biome - Connecte-toi{% endblock %}
 
 {% block body %}
+{% block stylesheet %}
+<link rel="stylesheet" href="../css/inscription_connexion_v1.css">
+{% endblock %}
 
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
 
-    {% if app.user %}
+     <!--Debut header-->
+
+        <!--Mettre le header-->
+
+    <!--Fin header-->
+
+    <main class="insc_connex_card">
+        <img src="../images/images_inscription_connexion/robot_livre.png" alt="Robot livre">
+        <div class="insc_connex_connexion">
+            <h2>Bienvenue</h2>
+    {#       {% if app.user %}
         <div class="mb-3">
             Salut {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
         </div>
     {% endif %}
-
-    <h1 class="h3 mb-3 font-weight-normal">Connecte toi</h1><br>
-    <h1 class="h3 mb-3 font-weight-normal">Pas encore de compte ? <a href="{{ path('registration') }}">Inscris toi !</a></li></h1>
-    <label for="inputUsername">Username</label>
-    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-    <input type="hidden" name="_csrf_token"
+    #}
+            <p>Si tu es déjà inscrit, tape ton pseudo et ton mot de passe.</p>  
+        <form method="post">
+         <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
     >
+            <label for="ic_pseudo"></label>
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
+                <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="insc_connex_input" id="ic_pseudo" placeholder="Ton pseudo" autocomplete="username" required autofocus>
+            <label for="ic_mdp"></label>
+        
+             <input type="password" name="password" id="ic_mdp" placeholder="Ton mot de passe" id="inputPassword" class="insc_connex_input" autocomplete="current-password" required>
+            <button class="insc_connex_bouton" type="submit">Se connecter</button>
+        </form>
         </div>
-    #}
+        <div class="insc_connex_barre">
+        </div>  
+        <div class="insc_connex_inscription">
+            <p>Tu n'es pas encore inscrit ?</p>
+            <a href="{{ path('registration') }}">S'inscrire</a>
+        </div>
+       
+    </main>
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+
+    <!--Debut footer-->
+
+        {% include 'petitFooterBleu.html.twig' %}
+   <!--Fin footer-->
+</body>
+ 
+ 
+
+ {#    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %} #}
+
+    
+
+    
+
+    
+   
+
+   
+
+  
 {% endblock %}

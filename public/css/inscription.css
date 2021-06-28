@@ -1,0 +1,271 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  transition: all 0.2s ease 0s;
+  font-family: 'muli';
+  /* Visualisation des éléments */
+  /*border: 1px dotted rgba(0,0,0,0.3);*/
+}
+
+/************** fin de la barre de menu ****************/
+
+.body-profil{
+  background-image: url(../images/images_inscription/trame_hd_2.png);
+  background-color: #f2f2f7;
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+.robot-profil{
+  display: flex;
+  justify-content: center;
+}
+.titre-inscription h2{
+  text-align: center;
+  font-weight: 700;
+  font-family:"Nunito", Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: #2F3061;
+}
+.titre-inscription h3{
+  text-align: center;
+  font-family: "Muli", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin-bottom: 1em;
+  color: #2F3061;
+}
+.inscription_form{
+  margin: auto;
+  width: 50%;
+}
+.form-control{
+  border-radius: 10px;
+  box-shadow: inset 0em 0.2em rgba(192 192 192 /40%);
+  padding-left: 20px;
+  width: 70%;
+  margin: auto;
+}
+.container-profil{
+  background-color: white;
+  padding-bottom: 2em;
+  margin: 0 auto;
+  max-width: 1320px;
+}
+.form-control::placeholder{
+  font-family: "Muli", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #2F3061;
+}
+.btn-inscription-profil{
+  border: solid 1px #2F3061;
+  background-color: #2F3061;
+  color: #f9f9f9;
+  border-radius: 20px;
+  width: 150px;
+}
+.btn-inscription-profil:hover{
+  border: solid 1px #2F3061;
+  background-color: #f9f9f9;
+  color:#2F3061
+}
+.image-compris{
+  text-align: center;
+  padding-top: 4em;
+  padding-bottom: 2em;
+}
+.image-compris img{
+  max-width: 13em;
+}
+.titre-choix-avatar{
+  text-align: center;
+}
+.titre-choix-avatar h2{
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #2F3061;
+  margin-bottom: 1em;
+}
+.container-choix-avatar{
+  width: 70%;
+  margin: auto;
+}
+.bip1 img{
+
+  transition: transform .5;
+}
+.bip1 img:hover{
+  transform: scale(1.1) rotate(10deg)
+}
+.bip2 img{
+
+  transition: transform .5;
+}
+.bip2 img:hover{
+  transform: scale(1.1) rotate(10deg)
+}
+.bip3 img{
+
+  transition: transform .5;
+}
+.bip3 img:hover{
+  transform: scale(1.1) rotate(10deg)
+}
+.bip4 img{
+
+  transition: transform .5;
+}
+.bip4 img:hover{
+  transform: scale(1.1) rotate(10deg)
+}
+.bip1 img  {
+  width: 150px;
+}
+.bip2 img  {
+  width: 150px;
+}
+.bip3 img  {
+  width: 150px;
+}
+.bip4 img  {
+  width: 150px;
+}
+.bip1, .bip2, .bip3, .bip4 {
+  text-align: center;
+  margin: 20px auto;
+}
+.au-suivant{
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  text-align:center;
+}
+
+/*Debut popup*/
+.modal-dialog {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8em;
+}
+.modal-header {
+  display: unset;
+  border: none;
+  padding-bottom: 0;
+}
+.modal-header img{
+  max-width: 10em;
+  margin: 1em 13em;
+}
+.modal-content {
+  border: none;
+  border-radius: 25px;
+}
+.modal-title{
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: #2F3061;
+}
+.modal-body{
+  font-family: "Muli", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2F3061;
+  text-align: center;
+}
+.modal-footer{
+  border: none;
+  justify-content: center;
+  padding-top: 0;
+  padding-bottom: 2em;
+}
+.popup_bouton{
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2F3061;
+  background-color: white;
+  filter: drop-shadow(0 6px 0 rgba(4, 4, 5, 0.16));
+  border: none;
+  border-radius: 25px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.btn-primary:hover{
+  background-color: #2F3061;
+}
+/*Fin popup*/
+
+@media screen and (min-width:480px) and (max-width:960px){
+  .container-choix-avatar{
+    width: 90%;
+    margin: auto;
+  }
+  .titre-inscription h2{
+    font-size: 25px;
+  }
+  .titre-inscription h3{
+    font-size: 17px;
+  }
+  .titre-choix-avatar h2{
+    font-size: 25px;
+  }
+  .modal-body{
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .form-control{
+    margin-left: 0;
+    width: 100%;
+  }
+  .image-compris img{
+    max-width: 10em;
+  }
+  .titre-inscription h2{
+    font-size: 20px;
+  }
+  .titre-inscription h3{
+    font-size: 15px;
+  }
+  .titre-choix-avatar h2{
+    font-size: 20px;
+  }
+  .inscription_form{
+    width: 75%;
+  }
+  .container-choix-avatar{
+    padding: 1em;
+    width: 90%;
+  }
+  .bip1 .bip2 .bip3 .bip4{
+    display: flex;
+    justify-content: center;
+  }
+  .row > * {
+    width: 50%;
+    margin: auto;
+  }
+  .bip1 img,
+  .bip2 img,
+  .bip3 img,
+  .bip4 img{
+    width: 130px;
+  }
+  .au-suivant{
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+  .modal-header img{
+    margin: 1em 6em;
+  }
+  .modal-body{
+    font-size: 17px;
+  }
+  .modal-footer{
+    padding-bottom: 3em;
+  }
+}

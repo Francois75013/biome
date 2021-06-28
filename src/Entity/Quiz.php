@@ -55,6 +55,7 @@ class Quiz
      */
     private $nb_points;
 
+
     public function __construct()
     {
         $this->Questions = new ArrayCollection();
@@ -163,6 +164,18 @@ class Quiz
     public function setNbPoints(?string $nb_points): self
     {
         $this->nb_points = $nb_points;
+
+        return $this;
+    }
+
+    public function getQuizImage(): ?string
+    {
+        return $this->quiz_image;
+    }
+
+    public function setQuizImage(?string $quiz_image): self
+    {
+        $this->quiz_image = $quiz_image;
 
         return $this;
     }

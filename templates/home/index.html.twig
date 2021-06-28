@@ -1,4 +1,6 @@
-{% extends 'base.html.twig' %}
+{% include 'base.html.twig' %}
+
+
 
 {% block title %}Biome - Accueil{% endblock %}
 
@@ -16,12 +18,12 @@
     />
    <!--adobe font muli-->
    <link rel="stylesheet" href="https://use.typekit.net/fen5oto.css">
-hahaha
+
    <!--gfont nunito-->
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="../css/base.css"/>
+    <link rel="stylesheet" href="/css/base.css"/>
        {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
@@ -38,6 +40,7 @@ hahaha
 
     <!-- Bannière -->
     <main>
+ 
       <div class="banniere">
         <div class="text-center">
           <h2 class=" accueil_h2">Bienvenue sur</h2>
@@ -55,16 +58,16 @@ hahaha
         <div class="row" style="width: 100%"> 
           <!-- colonne gauche -->
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
-            <img class="accueil_robot" src="../images/images_accueil/robot_fond_hd.png"/>
+            <img class="accueil_robot" src="/images/images_accueil/robot_fond_hd.png"/>
           </div>
           <!-- colone droite -->
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
             <h2 class="accueil_robot_h2">Aide Bibi en trouvant les bonnes réponses</h2>
             <p class="accueil_robot_p">Deviens incollable sur l'écologie avec Bibi le robot et atteins le plus haut niveau !</p>
             <p class="accueil_robot_p">Chaque bonne réponse te donne des points !</p>
-            <a href="" class="accueil_bouton_profil">
+            <a href="{{ path('registration') }}" class="accueil_bouton_profil">
               <span>Créer ton profil</span>
-              <img src="../images/images_accueil/icone_profil.png" alt="picto profil"></a>
+              <img src="/images/images_accueil/icone_profil.png" alt="picto profil"></a>
           </div>
         </div>
     </section>
@@ -78,7 +81,7 @@ hahaha
           <div class="meilleurs-scores">
             <!-- bulle 1 -->
             <div class="ms-1">
-              <div class="couronne-accueil"><img src="../images/images_accueil/couronne_argent.png"/></div>
+              <div class="couronne-accueil"><img src="/images/images_accueil/couronne_argent.png"/></div>
               <div class="avatar">
               </div>
               <div class="score-accueil">
@@ -88,7 +91,7 @@ hahaha
             </div>
             <!-- bulle 2 -->
             <div class="ms-2">
-              <div class="couronne-accueil2"><img src="../images/images_accueil/couronne_or.png"/></div>
+              <div class="couronne-accueil2"><img src="/images/images_accueil/couronne_or.png"/></div>
               <div class="avatar">
               </div>
               <div class="score-accueil">
@@ -98,7 +101,7 @@ hahaha
             </div>
 			 <!-- bulle 3 -->
             <div class="ms-3">
-              <div class="couronne-accueil"><img src="../images/images_accueil/couronne_bronze.png"/> </div>
+              <div class="couronne-accueil"><img src="/images/images_accueil/couronne_bronze.png"/> </div>
                 <div class="avatar">
                  </div>
               <div class="score-accueil">
@@ -114,7 +117,7 @@ hahaha
                 <div class="accueil_rang">4</div>
                 <div class="accueil_gagnant">BUBULLE</div>
                 <div class="score-valeur">350pts</div>
-                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+                <div><img src="/images/images_accueil/coin.png" width="40px"> </div>
               </div>
             </div>
             <div class="col-md-4">
@@ -122,7 +125,7 @@ hahaha
                 <div class="accueil_rang">5</div>
                 <div class="accueil_gagnant">BUBULLE</div>
                 <div class="score-valeur">350pts</div>
-                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+                <div><img src="/images/images_accueil/coin.png" width="40px"> </div>
               </div>
             </div>
             <div class="col-md-4">
@@ -130,7 +133,7 @@ hahaha
                 <div class="accueil_rang">6</div>
                 <div class="accueil_gagnant">BUBULLE</div>
                 <div class="score-valeur">350pts</div>
-                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+                <div><img src="/images/images_accueil/coin.png" width="40px"> </div>
               </div>
             </div>
             <div class="col-md-4">
@@ -138,7 +141,7 @@ hahaha
                 <div class="accueil_rang">7</div>
                 <div class="accueil_gagnant">BUBULLE</div>
                 <div class="score-valeur">350pts</div>
-                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+                <div><img src="/images/images_accueil/coin.png" width="40px"> </div>
               </div>
             </div>
 			 <div class="col-md-4">
@@ -146,7 +149,7 @@ hahaha
                 <div class="accueil_rang">8</div>
                 <div class="accueil_gagnant">BUBULLE</div>
                 <div class="score-valeur">350pts</div>
-                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+                <div><img src="/images/images_accueil/coin.png" width="40px"> </div>
               </div>
             </div>
             <div class="col-md-4">
@@ -154,7 +157,7 @@ hahaha
                 <div class="accueil_rang">9</div>
                 <div class="accueil_gagnant">BUBULLE</div>
                 <div class="score-valeur">350pts</div>
-                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+                <div><img src="/images/images_accueil/coin.png" width="40px"> </div>
               </div>
             </div>
             <div class="col-md-4">
@@ -162,7 +165,7 @@ hahaha
                 <div class="accueil_rang">10</div>
                 <div class="accueil_gagnant">BUBULLE</div> 
                 <div class="score-valeur">350pts</div>
-                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+                <div><img src="/images/images_accueil/coin.png" width="40px"> </div>
               </div>
             </div>
             <div class="col-md-4">
@@ -170,7 +173,7 @@ hahaha
                 <div class="accueil_rang">11</div>
                 <div class="accueil_gagnant">BUBULLE</div>
                 <div class="score-valeur">350pts</div>
-                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+                <div><img src="/images/images_accueil/coin.png" width="40px"> </div>
               </div>
             </div>
             <div class="col-md-4">
@@ -178,7 +181,7 @@ hahaha
                 <div class="accueil_rang">12</div>
                 <div class="accueil_gagnant">BUBULLE</div>
                 <div class="score-valeur">350pts</div>
-                <div><img src="../images/images_accueil/coin.png" width="40px"> </div>
+                <div><img src="/images/images_accueil/coin.png" width="40px"> </div>
               </div>
 			  </div>
          
@@ -193,32 +196,15 @@ hahaha
           <h3>
             Biome est une plateforme de quiz développée en paretenariat avec l'Eduction Nationale et l'ADEME pour sensibiliser les enfants à l'écologie et au développement durable.
           </h3>
-          <a href="#">En savoir plus</a>
+          <a href="{{ path('parents') }}">En savoir plus</a>
         </div>
       </div>
     </section>
 
   <!--Debut du footer-->
     
-    <!--Mettre le grand footer-->
+    {% include ('grandFooter.html.twig') %}
     
   <!--Fin du footer-->
-    </main>
 
-
-
-		
-	
-		 <ul>
-        <li><a href="{% if app.user is null %}{{ path('security') }}{% else %} {{ path('themes') }}{% endif %}">Commence à jouer</a></li>
-        <li><a href="{{ path('parents') }}">Pour les parents</a></li>
-        <li><a href="{{ path('registration') }}">Crée ton profil</a></li>
-		<li><a href="{{ path('security') }}">log</a></li>
-    </ul>
-	
-	
-</main>
-<footer>
-<a href="{{ path('cgu') }}">CGU - Mentions légales</a>
-</footer>
 {% endblock %}

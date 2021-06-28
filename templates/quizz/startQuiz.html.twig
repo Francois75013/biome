@@ -6,24 +6,9 @@
 
 {% block stylesheets %}
 
-
-	<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
-	<!--link css-->
-	<link
-	rel="stylesheet" href="/css/question.css">
-
-
-	<!--adobe font muli-->
-	<link
-	rel="stylesheet" href="https://use.typekit.net/fen5oto.css">
-
-	<!--gfont nunito-->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-
+	
+<link rel="stylesheet" href="/css/question.css">
+	
 {% endblock %}
 {% block body %}
 	<body class="p-3 question_body">
@@ -40,15 +25,15 @@
 					class="row">
 					<!--nombre question-->
 					<div class="col-2">
-						<p class="question_number">
-							<span>1</span>/10</p>
+						<p class="question_number">{{tour}}/10</p>
+							
 					</div>
 
 					<div class="col-sm-8">
 						<p class="question_txt">{{ question.question }}</p>
 
 						<div
-							class="col-2"><!--timer-->
+							class="col-2"><div id="root"></div>
 						</div>
 
 						<!--4 propositions-->
@@ -81,10 +66,10 @@
 
 				<!--Debut du footer-->
 
-			<!--Mettre le petit footer blanc-->
+			{% include 'petitFooter.html.twig' %}
 
 				<!--Fin du footer-->
-
+{% endblock %}
 
 				{# 		<div class="row">
 											<div class="col-2">
@@ -107,4 +92,4 @@
 						</div>
 					</body>
 				</div></p></form></main> #}
-			{% endblock %}
+			

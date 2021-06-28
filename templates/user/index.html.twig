@@ -4,19 +4,112 @@
 {% endblock %}
 
 {% block body %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
+{% block stylesheet %}
+<link rel="stylesheet" href="/css/profil_v1.css">
+<link rel="stylesheet" href="https://use.typekit.net/unw5dxt.css">
+{% endblock %}
 
+
+    <!--Debut du header-->
+
+        <!--Mettre le header-->
+
+    <!--Fin du header-->
+    <!--Debut du corps-->
+
+        <main class="container profil_main">
+            
+            <!--Debut avatar+parametres-->
+            <div class="profil_avatar">
+			
+               <img  src="{{ asset ('images/')~app.user.avatar }}"/>
+				
+                <h2>{{ app.user.username }}</h2>
+            </div>
+            <div class="profil_parametre">
+                <a href=""><img src="../images/images_profil/parametre.png" alt="Picto parametre"></a>
+            </div>
+            <!--Fin avatar+parametres-->
+
+            <!--Debut tableaux-->
+            <div class="profil_tableaux">
+                <div class="profil_gauche">
+
+                    <!--Tableau niveau-->
+                    <div class="profil_niveau">
+                        <h3 class="profil_h3">Ton niveau</h3>
+                        <div class="profil_flex">
+                            <div class="profil_bloc">
+                                <p class="profil_cadre_niveau">Niveau 3</p>
+                                <div class="profil_argent">
+                                    <span>150</span>
+                                    <img src="../images/images_profil/coin.png" alt="Picto pièce">
+                                </div>
+                            </div>
+                            <div class="profil_bloc">
+                                <p>Il te manque 50 pièces pour passer au niveau suivant</p>
+                                <img class="profil_progres" src="../images/images_profil/niveau.png" alt="Niveau progression">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Tableau theme-->
+                    <div class="profil_theme">
+                        <h3 class="profil_h3">Tes thèmes favoris</h3>
+                        <div class="profil_groupe">
+                            <a href="" class="profil_carte profil_A">
+                                <img src="../images/images_profil/dechets.png" alt="Picto recyclage">
+                                <h3 class="profil_theme_h3">La gestion des déchêts</h3>
+                            </a>
+                            <a href="" class="profil_carte profil_B">
+                                <img src="../images/images_profil/durable.png" alt="Picto terre">
+                                <h3 class="profil_theme_h3">Consommez de manière durable</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="profil_droite">
+
+                    <!--Tableau classement-->
+                    <h3 class="profil_h3">Ton classement</h3>
+                    <div class="profil_rank">
+                        <span>35</span>
+                        <span class="profil_rank_nom">Bubulle</span>
+                        <span>400</span>
+                        <img src="../images/images_profil/coin.png" alt="Picto pièce">
+                    </div>
+                    <div class="profil_rank_bis">
+                        <span>35</span>
+                        <span class="profil_rank_nom_bis">Toto13</span>
+                        <span>350</span>
+                        <img src="../images/images_profil/coin.png" alt="Picto pièce">
+                    </div>
+                    <div class="profil_rank">
+                        <span>35</span>
+                        <span class="profil_rank_nom">Nino-75</span>
+                        <span>320</span>
+                        <img src="../images/images_profil/coin.png" alt="Picto pièce">
+                    </div>
+                    <div class="profil_rank">
+                        <span>35</span>
+                        <span class="profil_rank_nom">Mumu27</span>
+                        <span>280</span>
+                        <img src="../images/images_profil/coin.png" alt="Picto pièce">
+                    </div>
+                </div>
+            </div>
+            <!--Fin tableaux-->
+        </main>
+
+
+    <!--Fin du corps-->
+    <!--Debut du footer-->
+
+        <!--Mettre le petit footer bleu-->
+
+    <!--Fin du footer-->
+</body>
+{#
 	<main>
 		<h1>Mon profil</h1>
 
@@ -28,8 +121,8 @@
 	{% else %}
 		{{ app.user.username }},
 		<a href="{{ path('app_logout') }}">Déconnexion</a><br>
-		<img  src="{{ asset('assets/')~app.user.avatar }}"/>
+		<img  src="{{ asset('images/')~app.user.avatar }}"/>
 		{{app.user.score}}
 	{% endif %}
-
+#}
 </main>{% endblock %}

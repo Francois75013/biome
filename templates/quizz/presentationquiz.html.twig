@@ -1,28 +1,76 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Biome - Choix du quiz {% endblock %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/presentation_quiz.css"/>
+{% endblock %}        
 {% block body %}
+        <main>
+            <div class="container-lg p-3 debut_fond debut_img">
+                <div class="row">
+                    <!-- lien retour-->
+                    <div class="col-3 col-xs-2 col-md-3 offset-1">
+                        <p class="d-none d-md-block"><a href="{{ path('listquiz') }}" class="debut_retour"><span>Retour</span></a></p>
+                        <p class="d-md-none"><a href=""><img class="debut_imgretour debut_btn-shadow" src="/images/images_presentation_quiz/retour_mobile.png" alt=""></a><p>
+                    </div>
+                    <!-- lien jouer-->
+                    <div class="col-4 col-xs-6 col-md-4 text-center">
+                    {% if app.user is null %}<a href="{{ path('security') }}" class="btn debut_jouer">Jouer</a>{% else %}<a href="{{ path('startQuiz', {'id':quiz.id }) }}" class="btn debut_jouer">Jouer</a>{% endif %}
+                    
+                    </div>
+                    <!-- difficulté du quiz-->
+                    <div class="col-md-3 debut_difficulte">
+                        <p class="text-center text-md-end">Difficulté :<img src="../images/images_presentation_quiz/difficulte_negatif.png" alt="éclairs difficultée"><img class="eclair2" src="../images/images_presentation_quiz/difficulte_negatif.png" alt="éclairs difficulté">{{quiz.question}}</p>
+                    </div>
 
+                </div>
+                
+                <div class="row ">
+                    <div class="col-1"></div> 
+                    <!-- intro du quiz-->
+                    <div class="col-10 g-4 debut_txt">
+                        <p>Bouteilles, gourdes, flacons, bocaux… le verre est partout dans ton quotidien. Mais sais-tu vraiment d’où il vient, comment il est fabriqué et comment bien l’utiliser pour prendre soin de notre planète ? Plonges avec nous dans l’univers de la consigne.</p>
+                    </div>
+                    
+                    <!-- cards suggestions de quiz-->
+                    <div class="row g-4 debut_suggestion"><p>Ces quiz pourraient t’intéresser</p></div>
+                    <div class="pres_groupe">
+                        <div class="pres_carte pres_A">
+                            <img src="../images/images_presentation_quiz/difficulte.png" alt="Picto difficulté">
+                            <img src="../images/images_presentation_quiz/difficulte.png" alt="Picto difficulté">
+                            <h3 class="pres_h3">Fabrique ton savon maison</h3>
+                            <a href="#">Jouer</a>
+                        </div>
+                        <div class="pres_carte pres_B">
+                            <img src="../images/images_presentation_quiz/difficulte.png" alt="Picto difficulté">
+                            <h3 class="pres_h3">Répare tes objets</h3>
+                            <a href="#">Jouer</a>
+                        </div>
+                        <div class="pres_carte pres_C">
+                            <img src="../images/images_presentation_quiz/difficulte.png" alt="Picto difficulté">
+                            <img src="../images/images_presentation_quiz/difficulte.png" alt="Picto difficulté">
+                            <h3 class="pres_h3">Et si on achetait local ?</h3>
+                            <a href="#">Jouer</a>
+                        </div>
+                    </div>   
+                </div>
+            
+            </div>      
 
+        </main>
+    
 
-<main>
+{% endblock %}
 
 
  
 
-    
+    {#
     <h1>{{ quiz.question}}</h1>
           {% if app.user is null %}<a href="{{ path('security') }}">Jouer</a>{% else %}<a href="{{ path('startQuiz', {'id':quiz.id }) }}{% endif %}">Jouer</a>
-        
+        #}
 
 
 
     
 
-
-
-</main>
-
-
-{% endblock %}

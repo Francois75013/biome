@@ -1,0 +1,151 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 16px;
+    background-color: #F2F2F7;
+    background-image: url(../images/images_theme/trame_hd_2.png);
+    margin: 0;
+}
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+}
+/*Debut du header*/
+
+
+/*Fin du header*/
+
+/*Debut du corps*/
+.insc_connex_card{
+    max-width: 1320px;
+    margin: 3em auto;
+    background-color: white;
+    border-radius: 25px;
+    padding: 1em;
+    text-align: center;
+}
+.insc_connex_card img{
+    max-width: 12em;
+    margin-top: 3em;
+}
+.insc_connex_card h2{
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #2F3061;
+}
+.insc_connex_card p{
+    font-family: "Muli", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2F3061;
+}
+.insc_connex_input{
+    border-radius: 10px;
+    box-shadow: inset 0em 0.2em rgba(192 192 192 /40%);
+    border: solid 1px #DADADA;
+    display: block;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    padding-left: 1.5em;
+    max-width: 38em;
+    width: 80%;
+}
+.insc_connex_input::placeholder{
+    font-family: "Muli", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2F3061;
+    opacity: 1;
+}
+.insc_connex_bouton{
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    background-color: #2F3061;
+    border-radius: 25px;
+    border: none;
+    padding: 0.6em 2em;
+    margin: 1em auto;
+    filter: drop-shadow(0 6px 0 rgba(4, 4, 5, 0.16));
+}
+.insc_connex_barre{
+    display: block;
+    width: 100%;
+    max-width: 10em;
+    content: '';
+    border: solid 1px #2F3061;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.insc_connex_inscription a{
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    background-color: #2F3061;
+    border-radius: 25px;
+    border: none;
+    padding: 0.6em 2em;
+    margin-top: 1em;
+    margin-bottom: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 6px 0 rgba(4, 4, 5, 0.16));
+    text-decoration: none;
+    display: block;
+    max-width: 10em;
+}
+
+
+/*Fin du corps*/
+
+/*Debut du footer*/
+
+/*Fin du footer*/
+
+/*Media query Ipad*/
+@media screen and (min-width:480px) and (max-width:960px){
+    .insc_connex_card{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
+/*Media query Iphone X*/
+@media screen and (max-width:480px) {
+    .insc_connex_card{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    .insc_connex_card img{
+        max-width: 8em;
+    }
+    .insc_connex_card h2{
+        font-size: 25px;
+    }
+    .insc_connex_card p{
+        font-size: 16px;
+    }
+    .insc_connex_input{
+        width: 100%;
+    }
+    .insc_connex_bouton{
+        font-size: 16px;
+    }
+    .insc_connex_inscription a{
+        font-size: 16px;
+    }
+}

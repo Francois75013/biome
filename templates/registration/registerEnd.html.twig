@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}Biome - Inscription {% endblock %}
+    {% block stylesheet %}
+     <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,400,700,900&display=swap"
+      rel="stylesheet"
+    />
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/fen5oto.css%22%3E">
+    
+    <link rel="stylesheet" href="../css/fin_inscription.css"/>
+{% endblock %}
+{% block body %}
+
+  <!--Debut header-->
+    
+    <!--Mettre le header-->
+
+  <!--Fin header-->
+     
+
+<div class="body-inscription">
+  <div class="container-inscription" style="border-radius: 30px">
+    <div class="image-compris">
+      <img src="../images/images_fin_inscription/robot_livre.png"/>
+    </div>
+
+    <div class="titre-inscription">
+      <h2>Bravo</h2>
+      <h3>Félicitations {{ app.user.username }}, tu es désormais inscrit !</h3>
+    </div>
+
+    <div class="va-jouer">
+      <a href="{{ path('themes') }}">Jouer</a>
+    </div>
+  </div>        
+</div>
+
+  <!--Debut footer-->
+ {% include 'petitFooterBleu.html.twig' %}
+
+  <!--Fin footer-->
+  {% endblock %}

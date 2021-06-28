@@ -43,11 +43,14 @@ class QuizzController extends AbstractController
     public function quizlist(HttpFoundationRequest $request, QuizRepository $quizRepository): Response
     {
 
+        $tabIllu = array('A', 'B', 'C', 'D','E');
+       
 
         $quizList = $quizRepository->findBy(array('theme' => $request->query->get('themequiz')));
 
         return $this->render('quizz/quizList.html.twig', [
-            'quizlist' => $quizList
+            'quizlist' => $quizList,
+            'tabIllu' => $tabIllu
         ]);
     }
 
@@ -70,10 +73,9 @@ class QuizzController extends AbstractController
        $session->set("tour", 0); // session initialisé à 0 
        $session->set("score", 0); // score initialisé à 0 
        $session->set("questionPassed", ''); // pour ne pas repéter les questions
-       $session->set("userReponse", 0);
-       $session->set("gReponse", 0);
+   
      
-        return $this->render('quizz/presentationQuiz.html.twig', ['quiz' => $quiz
+        return $this->render('quizz/presentationquiz.html.twig', ['quiz' => $quiz
         ]);
 
      }
@@ -89,8 +91,6 @@ class QuizzController extends AbstractController
 
             if($request->request->get('selectReponse') == 1){
                 $session->get('score', $session->get('score') + 15);
-
-
             }
 
         }
@@ -101,8 +101,11 @@ class QuizzController extends AbstractController
         $tour = $tour + 1;
         $session->set('tour', $tour);
         
-        if($tour < 11){
-            return $this->render('quizz/startQuiz.html.twig');
+        if($tour > 10){
+
+
+
+            return $this->redirectToRoute('finQuiz');
         }
 
         $tabQuestionPased = explode(',', $session->get('questionPassed'));
@@ -123,7 +126,7 @@ class QuizzController extends AbstractController
         };
      
         return $this->render('quizz/startQuiz.html.twig', ['question' => $question,
-        'reponses' => []]);
+        'tour'=> $tour]);
 
      }
 
@@ -145,6 +148,18 @@ class QuizzController extends AbstractController
 
 
 }
+ /**
+     * @Route("/finQuiz", name="finQuiz")
+     */
+    public function finQuiz(QuizRepository $quizRepository): Response
+    {
+
+        
+
+        return $this->render('quizz/finQuiz.html.twig', [
+            
+        ]);
+    }
 
 
 

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+
+	
+<link rel="stylesheet" href="/css/fin_quiz.css">
+	
+{% endblock %}
+{% block body %}
+ <body class="p-3 fin_body">
+        <main>
+            
+            <div class="container-lg p-3 fin_fond fin_img">
+
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-sm-8">
+                        <p class="fin_titre">Félicitations !</p>
+                        <div class="row gy-3">
+
+                            <div class="g-5">
+
+                                <p class="fin_soustitre">Tu as terminé le quiz avec {{app.user.score}} points !</p>
+                                <div class="g-5">
+                                    <p class="fin_nombre">{{app.user.score}}<span><img src="../images/images_fin/stack_coin.png" alt="tas de pièces"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="fin_liens">
+                        <p><a href="{{ path('startQuiz', {'id':quiz.id }) }}" ><span class="fin_rejouer">Rejouer</span></a> 
+                        <a class="fin_jouerautre" href="{{ path('themes') }}"><span>Jouer à un autre quiz</span></a></p>
+                    </div>
+                </div>
+            </div>    
+        </main>
+
+        <!--Debut du footer-->
+    
+         
+    
+        <!--Fin du footer-->
+
+    </body>
+    {% endblock %}

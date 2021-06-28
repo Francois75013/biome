@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+}
+*:hover {
+    transition: all 0.2s ease 0s;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+a,
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+/* fond vagues */
+.debut_body{
+    background-image: url(/images/images_presentation_quiz/vague_fond_hd.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:bottom;
+    min-height: 100vh;
+}
+/* fond blanc */
+.debut_fond{
+    background-color: white;
+    border-radius: 30px; 
+    max-width: 1320px;
+    margin: auto;
+    
+}
+/* debut img */
+.debut_img {
+    background-image: url(/images/images_presentation_quiz/debut.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 22.445em;
+    padding-top: 22.445em !important
+}
+/* bouton retour */
+.debut_retour{
+    background-image: url(../images/images_presentation_quiz/retour.png);
+    font-family: 'nunito','sans-serif';
+    font-size: 1.25em;
+    font-weight: 800;
+    color: #FF7255 !important;
+    background-repeat: no-repeat;
+    background-size: 6em;
+    max-width: 0.5em;
+    padding-top: 0.3em;
+    padding-bottom: 0.5em;
+    padding-left: 2em;
+    padding-right: 7em;
+    display: inline-block;
+    text-decoration: none;
+    filter: drop-shadow(0 6px 0 rgba(4, 4, 5, 0.16))
+}
+.debut_imgretour{
+    width:4.5rem;
+}
+
+.debut_btn-shadow {
+    filter: drop-shadow(0 6px 0 rgba(4, 4, 5, 0.16))
+}
+/* bouton jouer */
+
+.debut_jouer {
+    text-align: center;
+    box-shadow: 0px 5px 0px 0px rgba(4, 4, 5, 0.15);
+    border-radius: 30px;
+    padding: 0.5em 4em;
+    border-style: hidden;
+    background-color: #FF7255;
+/* txt bouton jouer */
+    font-family: 'nunito','sans-serif';
+    font-size: 1.25em;
+    font-weight: 800;
+    color: white !important; 
+}
+.debut_difficulte{
+    transition: none;
+    font-family: 'muli','sans-serif';
+    font-size: 1.125em;
+    font-weight: 800;
+    color:#2F3061;
+    padding-top: 0.4em;
+    padding-bottom: 0.5em;   
+}
+.debut_difficulte img{
+    width: 2em;
+    padding-left: 0.5em;
+}
+.debut_txt {
+    font-size: 1.125em;
+    text-align: center;
+    color:#2F3061;
+}
+.debut_suggestion {
+    text-align: center;
+    font-family: 'muli', 'sans-serif';
+    font-weight: 800;
+    color:#2F3061;
+    font-size: 1.25em;
+}
+/*cards*/
+.pres_groupe{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.pres_carte{
+    width: calc(100% / 3 - 3em);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    filter: drop-shadow(0 6px 0 rgba(4, 4, 5, 0.16));
+}
+.pres_A{
+    background-image: url(../images/images_choix_quiz/illu_quiz_1.png);
+    background-color: #ffffff;
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.pres_B{
+    background-image: url(../images/images_choix_quiz/illu_quiz_2.png);
+    background-color: #ffffff;
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.pres_C{
+    background-image: url(../images/images_choix_quiz/illu_quiz_4.png);
+    background-color: #ffffff;
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.pres_h3{
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #2F3061;
+    font-weight: 600;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.pres_carte img{
+    max-width: 2em;
+    padding-top: 8em;
+    position: relative;
+    left: 8em;
+    margin-right: 0.5em;
+    filter: drop-shadow(0 3px 0 rgba(4, 4, 5, 0.16));
+}
+.pres_carte a{
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    background-color:#FF7255;
+    border-radius: 30px;
+    padding: 0.3em 1.2em;
+    margin-bottom: 1em;
+    display: inline-block;
+    filter: drop-shadow(0 6px 0 rgba(4, 4, 5, 0.16));
+}
+
+/*Media query Ipad*/
+@media screen and (min-width:480px) and (max-width:960px){
+    .debut_img {
+        background-image: url(../images/images_presentation_quiz/debut_mobile.png);
+    }
+    .debut_difficile,
+    .debut_difficile2{
+    left: 6em;
+    }
+    .debut_difficile3 {
+    left: 8.5em;
+    }
+    .pres_groupe{
+        gap: 1.5em;
+    }
+    .pres_carte{
+        width: calc(100% / 3 - 1.5em);
+    }
+    .pres_carte img{
+        max-width: 1.5em;
+        padding-top: 5em;
+        position: relative;
+        left: 4em;
+        margin-right: 0.2em;
+        filter: drop-shadow(0 3px 0 rgba(4, 4, 5, 0.16)); 
+    }
+    .pres_h3{
+        font-size: 15px;
+    }
+    .pres_carte a{
+        font-size: 0.8em;
+    }
+}
+
+/*Media query Iphone X*/
+@media screen and (max-width:480px) {
+    .debut_img {
+        background-image: url(../images/images_presentation_quiz/debut_mobile.png);
+        padding-top:12em !important;
+    }
+    .debut_txt{
+        font-size: 1em;
+    }
+    .debut_difficulte{
+        text-align: center;
+        margin-top: 0.25em;
+    }
+    .debut_jouerdiv {
+        padding-right: 7em;
+        padding-left: 7em;
+    }
+    a.debut_jouer {
+        width: 100%;
+        padding: .5rem 0;
+    }
+
+    .pres_carte{
+        width: 100%;
+    }
+    .pres_groupe{
+        padding: 1em;
+    }
+    .pres_carte img{
+        max-width: 1.5em;
+        padding-top: 7em;
+        position: relative;
+        left: 7em;
+        margin-right: 0.2em;
+        filter: drop-shadow(0 3px 0 rgba(4, 4, 5, 0.16)); 
+    }
+    .pres_h3{
+        font-size: 16px;
+        margin-bottom: 1em;
+        margin-bottom: 1em;
+    }
+    .pres_carte a{
+        font-size: 1em;
+    }
+}

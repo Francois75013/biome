@@ -1,26 +1,98 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Biome - Les quiz du thème {% endblock %}
+{% block title %}Biome - Les quiz {% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% block stylesheet %}
+    <link rel="stylesheet" href="/css/choix_quiz_v1.css">
+    <link rel="stylesheet" href="https://use.typekit.net/unw5dxt.css">
 
+{% endblock %}
 
+    <!--Debut du header-->
+
+        <!--Mettre le header-->
+
+    <!--Fin du header-->
+    <!--Debut du corps-->
 <main>
-<h1>Les quiz</h1>
+ <main class="choix_main">
+            <div class="container">
 
+                <!--Retour+h2-->
+                <div class="choix_retour">
+                    <a href="{{ path('themes') }}">Retour</a>
+                </div>
+                <h2 class="choix_h2">Choisis un quiz</h2>
+                 <!--Debut quiz-->
+                 
+                <div class="choix_groupe">
+                    {% set i = 0 %}
+                    {% for quiz in quizlist %}
+                        <div class="choix_carte choix_{{ tabIllu[i]}} ">
+                            <img src="../images/images_choix_quiz/difficulte.png" alt="Picto difficulté">
+                            <img src="../images/images_choix_quiz/difficulte.png" alt="Picto difficulté">
+                            <h3 class="choix_h3">{{quiz.question }}</h3>
+                        
+                            <a href="{{ path('presentationQuiz', {'id':quiz.id }) }}">Jouer</a>
+                            
+                        </div>
+                        {% if i >= 4 %}
+                            {% set i = 0 %}
+                        {% else %}
+                            {% set i = i + 1 %}
+                        {% endif %}
 
+                        
+                    {% endfor %}
+                    {# <div class="choix_carte choix_B">
+                        <img src="../images/images_choix_quiz/difficulte.png" alt="Picto difficulté">
+                        <h3 class="choix_h3">Répare tes objets</h3>
+                        <a href="">Jouer</a>
+                    </div>
+                    <div class="choix_carte choix_C">
+                        <img src="../images/images_choix_quiz/difficulte.png" alt="Picto difficulté">
+                        <img src="../images/images_choix_quiz/difficulte.png" alt="Picto difficulté">
+                        <h3 class="choix_h3">Et si on achetait local ?</h3>
+                        <a href="">Jouer</a>
+                        <div class="choix_lock">
+                            <img src="../images/images_choix_quiz/cadenas.png" alt="Pictos cadenas">
+                            <p>Obtiens 150 points pour débloquer ce quiz</p>
+                        </div>
+                    </div>
+                    <div class="choix_carte choix_D">
+                        <img src="../images/images_choix_quiz/difficulte.png" alt="Picto difficulté">
+                        <img src="../images/images_choix_quiz/difficulte.png" alt="Picto difficulté">
+                        <img src="../images/images_choix_quiz/difficulte.png" alt="Picto difficulté">
+                        <h3 class="choix_h3">Fabrique ton savon à la maison</h3>
+                        <a href="">Jouer</a>
+                        <div class="choix_lock">
+                            <img src="../images/images_choix_quiz/cadenas.png" alt="Pictos cadenas">
+                            <p>Obtiens 200 points pour débloquer ce quiz</p>
+                        </div>
+                    </div> #}
+                </div>
+                
+               
+                <!--Fin quiz-->
+            </div>
+        </main>
+
+    <!--Fin du corps-->
+    <!--Debut du footer-->
+
+       {% include 'petitFooterBleu.html.twig' %}
+
+    <!--Fin du footer-->
+
+</body>
+{% endblock %}
+
+{#
 
 
   {% for quiz in quizlist %}
     <a href="{{ path('presentationQuiz', {'id':quiz.id }) }}">{{ quiz.question }}</a><br>
 
 {% endfor %}
-
-</main>
-
-
-{% endblock %}
+#}
