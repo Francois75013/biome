@@ -17,10 +17,8 @@ const renderTime = ({ remainingTime }) => {
     </div>
   );
 
-
-
-
 }
+
 
 export function AppTimer() {
 

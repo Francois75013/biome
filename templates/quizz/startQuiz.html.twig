@@ -23,8 +23,11 @@
     
 		<div class="container-lg p-3 question_fond question_img"> <div
 			class="row">
-
+			
+			{% if passage == 0 %}
 			  <div id="root-timer"></div>
+			{% endif %}
+
 			<!--nombre question-->
 			<div class="col-2">
 				<p class="question_number">{{tour}}/10</p>
@@ -73,7 +76,7 @@
 
 <div class="row">
 	<div class="col-2">
-		<p class="reponse_number">{{tour}}/10</p>
+		<p class="reponse_number"></p>
 	</div>
 	<div class="col-sm-8">
 	{% if  reponseIsTrue  %}
@@ -108,13 +111,7 @@ text-align: center;" >{{description}}</p>
 
 	<form action="" method="POST">
 		<p class="question_valider">
-			<div class="reponse_suivante" style="display: inline-block;
-vertical-align: middle;
-text-decoration: none;
-font-family: 'nunito', sans-serif;
-font-size: 1.25em;
-font-weight: 800;
-color: #ff7255;">
+			<div class="reponse_suivante">
 	<button class="question_bouton reponse_questionsuivante" name="button">Question suivante<img class="question_icone" src="/images/images_question/valider.png" alt="valider"></button>
 </div>
 		</p>

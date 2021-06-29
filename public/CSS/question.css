@@ -137,6 +137,22 @@ input:checked + .question_prop {
 
 }
 
+.reponse_suivante {
+    /* display: inline-block; */
+    /* vertical-align: middle; */
+    /* text-decoration: none; */
+    font-family: 'nunito', sans-serif;
+    font-size: 1.25em;
+    font-weight: 800;
+    color: #ff7255;
+    width: 100%;
+    text-align: center;
+}
+
+#root-timer > .App >.timer-wrapper {
+    display: flex;
+    justify-content: center;
+
 @media (max-width: 1400px) {
     .question_img {
         background-image: url(../images/images_question/question_1_mobile.png);

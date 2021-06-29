@@ -43,6 +43,7 @@ class RegistrationController extends AbstractController
 
             $user->setRegisterDate(new DateTime());
         
+            
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email
@@ -59,6 +60,9 @@ class RegistrationController extends AbstractController
      */
     public function index(): Response
     {
+
+        
+
         return $this->render('registration/registerEnd.html.twig', [
             'controller_name' => 'RegistrationController',
         ]);
