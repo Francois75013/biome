@@ -20,9 +20,11 @@
 <!--Fin du header-->
 
 	<main>
-
+    
 		<div class="container-lg p-3 question_fond question_img"> <div
 			class="row">
+
+			  <div id="root-timer"></div>
 			<!--nombre question-->
 			<div class="col-2">
 				<p class="question_number">{{tour}}/10</p>
@@ -33,7 +35,7 @@
 				<p class="question_txt">{{ question.question }}</p>
 
 				<div
-					class="col-2"><div id="root"></div>
+					class="col-2">
 				</div>
 
 				<!--4 propositions-->
@@ -43,6 +45,8 @@
 						<div class="col-sm-6 gy-5">
 							<div>
 
+
+	
 								{% for reponse in question.Reponses %}
 
 									<input class="mb-4" id="r{{ reponse.id }}" type="radio" name="selectReponse" required="required" value="{{ reponse.isTrue }}">
