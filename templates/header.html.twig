@@ -1,10 +1,19 @@
 <div class="header-fixed-home">
-      <div class="container">
-        <header class="header-accueil">
-          <input class="menu-btn" type="checkbox" id="menu-btn"/>
-          <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-          <a href="{{ path('home') }}" class="logo"><img src="../images/images_barre_menu/logo_header.png"/></a>
-          <ul class="menu">
+        <div class="container">
+          <header class="header-accueil">
+            <input class="menu-btn" type="checkbox" id="menu-btn"/>
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <a href="{{ path('home') }}" class="logo"><img src="../images/images_barre_menu/logo_header.png"/></a>
+            <ul class="menu">
+              
+              
+              <li>
+
+         {#  point entrée moteur de recherche react #}
+                <div class="flex-search">
+                 <div id="rootQuizz"></div>
+                </div>
+              </li>
             
             
             <li>

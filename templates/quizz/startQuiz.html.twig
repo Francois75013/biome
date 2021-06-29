@@ -19,22 +19,24 @@
 
 <!--Fin du header-->
 
-<main>
+	<main>
+    
+		<div class="container-lg p-3 question_fond question_img"> <div
+			class="row">
 
-<div class="container-lg p-3 question_fond question_img"> <div
-	class="row">
-	<!--nombre question-->
-	<div class="col-2">
-		<p class="question_number">{{tour}}/10</p>
-		{# <p class="question_number">Passage : {{ passage }}</p> #}
-	</div>
-	{% if passage == 0 %}
-		<div class="col-sm-8">
-		<p class="question_txt">{{ question.question }}</p>
+			  <div id="root-timer"></div>
+			<!--nombre question-->
+			<div class="col-2">
+				<p class="question_number">{{tour}}/10</p>
+				{# <p class="question_number">Passage : {{ passage }}</p> #}
+			</div>
+			{% if passage == 0 %}
+				<div class="col-sm-8">
+				<p class="question_txt">{{ question.question }}</p>
 
-		<div
-			class="col-2"><div id="root"></div>
-		</div>
+				<div
+					class="col-2">
+				</div>
 
 		<!--4 propositions-->
 		<form action="" method="POST">
@@ -43,7 +45,9 @@
 				<div class="col-sm-12 gy-5">
 					<div>
 
-						{% for reponse in question.Reponses %}
+
+	
+								{% for reponse in question.Reponses %}
 
 							<input class="mb-4" id="r{{ reponse.id }}" type="radio" name="selectReponse" required="required" value="{{ reponse.isTrue }}">
 							<label for="r{{ reponse.id }}" class="p-3 border border rounded-pill question_prop">

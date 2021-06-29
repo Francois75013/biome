@@ -15,7 +15,7 @@
                     </div>
                     <!-- lien jouer-->
                     <div class="col-4 col-xs-6 col-md-4 text-center">
-                    {% if app.user is null %}<a href="{{ path('security') }}" class="btn debut_jouer">Jouer</a>{% else %}<a href="{{ path('startQuiz', {'id':quiz.id }) }}" class="btn debut_jouer">Jouer</a>{% endif %}
+                    {% if app.user is null %}<a href="{{ path('security') }}" id="start" class="btn debut_jouer">Jouer</a>{% else %}<a href="{{ path('startQuiz', {'id':quiz.id }) }}" class="btn debut_jouer">Jouer</a>{% endif %}
                     
                     </div>
                     <!-- difficulté du quiz-->

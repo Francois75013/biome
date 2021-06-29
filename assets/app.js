@@ -13,7 +13,7 @@ import  ReactDOM  from "react-dom";
 
 
 import Search from "./components/Search";
-/* import { AppTimer } from "./components/Timer"; */
+import { AppTimer } from "./components/Timer";
 
 
 ///////////////// MOTEUR DE RECHERCHE
@@ -34,7 +34,6 @@ ReactDOM.render(<App />, document.getElementById("rootQuizz"));
 
 ///////////////// TIMER 
 
-/* 
 // On recherche la div pour le timer (elle n'est pas forcément présente !)
 const rootElement = document.getElementById("root-timer");
 
@@ -43,4 +42,4 @@ if(rootElement != undefined)
 {
   // Oui, donc démarrage de React sur le composant AppTimer.
   ReactDOM.render(<AppTimer />, rootElement); 
-} */
+}
