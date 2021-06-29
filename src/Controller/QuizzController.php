@@ -71,8 +71,10 @@ class QuizzController extends AbstractController
 
        $session->set("quizId", $quiz->getId());
        $session->set("tour", 0); // session initialisé à 0 
+       $session->set("passage", 1); //
        $session->set("score", 0); // score initialisé à 0 
        $session->set("questionPassed", ''); // pour ne pas repéter les questions
+
    
      
         return $this->render('quizz/presentationquiz.html.twig', ['quiz' => $quiz
@@ -87,6 +89,26 @@ class QuizzController extends AbstractController
     ,  ReponsesRepository $reponsesRepository, Session $session, Request $request): Response
     {
 
+        $passage = $session->get('passage');
+        $tour = $session->get('tour');
+
+        if($passage == 0){
+            $passage = 1;
+            $session->set('passage', $passage);
+        }else{
+            $tour = $tour + 1;
+            $session->set('tour', $tour);
+
+            $passage = 0;
+            $session->set('passage', $passage);
+        }
+
+        if($tour > 10){
+            return $this->redirectToRoute('finQuiz');
+        }
+
+
+
         if(!empty($request->request)){
 
             if($request->request->get('selectReponse') == 1){
@@ -97,16 +119,7 @@ class QuizzController extends AbstractController
 
         
 
-        $tour = $session->get('tour');
-        $tour = $tour + 1;
-        $session->set('tour', $tour);
         
-        if($tour > 10){
-
-
-
-            return $this->redirectToRoute('finQuiz');
-        }
 
         $tabQuestionPased = explode(',', $session->get('questionPassed'));
 
@@ -114,9 +127,22 @@ class QuizzController extends AbstractController
 
         $questions = $questionRepository->findBy(array('quiz' => $id));
 
+        $description = "";
+
+        $imgQuest = $questionRepository->findBy(array('quiz' =>$id));
+
+      
+
+
         foreach($questions as $rowQuestion){
             if(!in_array($rowQuestion->getId(), $tabQuestionPased)){
                 $question = $rowQuestion;
+
+                $description = $rowQuestion->getDescription();
+
+               
+
+                
 
                 $newStringTabPassed = $session->get('questionPassed') . ',' . $rowQuestion->getId();
                 $session->set('questionPassed', $newStringTabPassed);
@@ -125,8 +151,15 @@ class QuizzController extends AbstractController
             }
         };
      
-        return $this->render('quizz/startQuiz.html.twig', ['question' => $question,
-        'tour'=> $tour]);
+        return $this->render('quizz/startQuiz.html.twig', [
+            'question' => $question,
+            'tour'=> $tour,
+            'passage' => $passage,
+            'description' => $description,
+            'imgQuest' => $imgQuest
+            
+
+        ]);
 
      }
 

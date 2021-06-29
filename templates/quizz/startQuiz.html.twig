@@ -6,90 +6,142 @@
 
 {% block stylesheets %}
 
-	
+
 <link rel="stylesheet" href="/css/question.css">
-	
+
 {% endblock %}
 {% block body %}
-	<body class="p-3 question_body">
+<body class="p-3 question_body">
 
-		<!--Debut du header-->
+<!--Debut du header-->
 
-		<!--Mettre le header-->
+<!--Mettre le header-->
 
-		<!--Fin du header-->
+<!--Fin du header-->
 
-			<main>
+	<main>
 
-				<div class="container-lg p-3 question_fond question_img"> <div
-					class="row">
-					<!--nombre question-->
-					<div class="col-2">
-						<p class="question_number">{{tour}}/10</p>
-							
+		<div class="container-lg p-3 question_fond question_img"> <div
+			class="row">
+			<!--nombre question-->
+			<div class="col-2">
+				<p class="question_number">{{tour}}/10</p>
+				{# <p class="question_number">Passage : {{ passage }}</p> #}
+			</div>
+			{% if passage == 0 %}
+				<div class="col-sm-8">
+				<p class="question_txt">{{ question.question }}</p>
+
+				<div
+					class="col-2"><div id="root"></div>
+				</div>
+
+				<!--4 propositions-->
+				<form action="" method="POST">
+					<div class="row gy-3">
+
+						<div class="col-sm-6 gy-5">
+							<div>
+
+								{% for reponse in question.Reponses %}
+
+									<input class="mb-4" id="r{{ reponse.id }}" type="radio" name="selectReponse" required="required" value="{{ reponse.isTrue }}">
+									<label for="r{{ reponse.id }}" class="p-3 border border rounded-pill question_prop">
+										<div>{{ reponse.reponse }}</div>
+									</label>
+
+								{% endfor %}
+
+							</div>
+						</div>
 					</div>
 
-					<div class="col-sm-8">
-						<p class="question_txt">{{ question.question }}</p>
 
-						<div
-							class="col-2"><div id="root"></div>
-						</div>
+					<p class="question_valider">
+						<button class="question_bouton" name="button">Valider<img class="question_icone" src="/images/images_question/valider.png" alt="valider"></button>
+					</p>
+				</form>
+			</div>
+			{% else %}
 
-						<!--4 propositions-->
-						<form action="" method="POST">
-							<div class="row gy-3">
+			{# {% block stylesheets %}
 
-								<div class="col-sm-6 gy-5">
-									<div>
+<link rel="stylesheet" href="/css/reponse.css">
 
-										{% for reponse in question.Reponses %}
+{% endblock %} #}
 
-											<input class="mb-4" id="r{{ reponse.id }}" type="radio" name="selectReponse" required="required" value="{{ reponse.isTrue }}">
-											<label for="r{{ reponse.id }}" class="p-3 border border rounded-pill question_prop">
-												<div>{{ reponse.reponse }}</div>
-											</label>
+				<div class="container-lg p-3 reponse_fond reponse_img">
 
-										{% endfor %}
+		<div class="row">
+			<div class="col-2">
+				<p class="reponse_number"><span>1</span>/10</p>
+			</div>
+			<div class="col-sm-8">
+			
+				<p class="reponse_titre">Vrai !</p>
+				
+				<p class="reponse_titre_bis">Faux !</p
+				<div class="row gy-3">
 
-									</div>
-								</div>
-							</div>
+					<div class="g-5">
+				
+							<p class="reponse_soustitre">Réponse :</p>
+							<p class="reponse_txt"></p>
+					
+					
+					<div class="g-5">
+						
+							<p class="reponse_txt">{{description}}</p>
+						
+					</div>
 
+					
+				</div>
+			</div>
 
-							<p class="question_valider">
-								<button class="question_bouton" name="button">Valider<img class="question_icone" src="/images/images_question/valider.png" alt="valider"></button>
-							</p>
-						</div>
-					</form>
-				</main>
+		</div>
+		
+		
+	</div>
 
-				<!--Debut du footer-->
+		
+			<form action="" method="POST">
+				<p class="question_valider">
+					<div class="reponse_suivante">
+			<button class="question_bouton reponse_questionsuivante" name="button">Question suivante<img class="question_icone" src="/images/images_question/valider.png" alt="valider"></button>
+		</div>
+				</p>
+			</form>
+			{% endif %}
+			
+		</main>
 
-			{% include 'petitFooter.html.twig' %}
+		<!--Debut du footer-->
 
-				<!--Fin du footer-->
+	{% include 'petitFooter.html.twig' %}
+
+		<!--Fin du footer-->
 {% endblock %}
 
-				{# 		<div class="row">
-											<div class="col-2">
-												<p class="question_8_number">
-													<div id="root"></div>
-											</div>
-											<div class="col-sm-8 question_8_txt">
-												<p>{{ question.question }}</p><br>
-												 #}
-				{# 
-							<form action="" method="POST"> {% for reponse in question.Reponses %}
-				
-								<input id="r1" type="radio" name="selectReponse" required="required" value="{{ reponse.isTrue }}">
-								<label for="r1" class="p-3 border rounded-3 question_8_prop">
-									<div>{{ reponse.reponse }}</div>
-								</label><br>
-				
-							{% endfor %}
-							<button class="validate" name="validate">Valider</button>
-						</div>
-					</body>
-				</div></p></form></main> #}
-			
+		{# 		<div class="row">
+									<div class="col-2">
+										<p class="question_8_number">
+											<div id="root"></div>
+									</div>
+									<div class="col-sm-8 question_8_txt">
+										<p>{{ question.question }}</p><br>
+											#}
+		{# 
+					<form action="" method="POST"> {% for reponse in question.Reponses %}
+		
+						<input id="r1" type="radio" name="selectReponse" required="required" value="{{ reponse.isTrue }}">
+						<label for="r1" class="p-3 border rounded-3 question_8_prop">
+							<div>{{ reponse.reponse }}</div>
+						</label><br>
+		
+					{% endfor %}
+					<button class="validate" name="validate">Valider</button>
+				</div>
+			</body>
+		</div></p></form></main> #}
+	

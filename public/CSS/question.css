@@ -54,7 +54,7 @@ ul {
 }
 /* question img */
 .question_img {
-    background-image: url(../images/images_question/question_1.png);
+    background-image: url(asset/images/images_question/{{imgQuest}}.pnp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
