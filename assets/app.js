@@ -7,13 +7,16 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
-import Search from "./components/Search";
+
 import React from "react";
-import { ReactDOM } from "react-dom"; 
-/* import { render } from './components';
-import { renderTime } from "./components"; */
-//import {Search} from "./components";
-/* import { CountdownCircleTimer } from "./components"  */
+import  ReactDOM  from "react-dom"; 
+
+
+import Search from "./components/Search";
+/* import { AppTimer } from "./components/Timer"; */
+
+
+///////////////// MOTEUR DE RECHERCHE
 
 function App()
 {
@@ -25,30 +28,19 @@ function App()
     )
      
 }
+
 ReactDOM.render(<App />, document.getElementById("rootQuizz"));
 
-/* function App() {
-    return (
-      <div className="App">
-       
-        <div className="timer-wrapper">
-          <CountdownCircleTimer
-            isPlaying
-            duration={20}
-            colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
-            onComplete={() => [true, 1000]}
-          >
-            
-            {renderTime}
-            
-          </CountdownCircleTimer>
-        </div>
-      </div>
-    );
-    
-  }
 
-export default App;
-const rootElement = document.getElementById("root");
-render(<App />, rootElement); 
- */
+///////////////// TIMER 
+
+/* 
+// On recherche la div pour le timer (elle n'est pas forcément présente !)
+const rootElement = document.getElementById("root-timer");
+
+// Existe-t'elle dans le DOM ?
+if(rootElement != undefined)
+{
+  // Oui, donc démarrage de React sur le composant AppTimer.
+  ReactDOM.render(<AppTimer />, rootElement); 
+} */
