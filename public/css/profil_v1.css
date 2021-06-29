@@ -32,7 +32,7 @@ body{
 /*Debut avatar+parametres*/
 .profil_avatar{
     text-align: center;
-    margin-top: -7em;
+    margin-top: 50px;
 }
 .profil_avatar img{
     max-width: 10em;
@@ -50,6 +50,7 @@ body{
     padding-bottom: 0.4em;
     padding-left: 1.2em;
     padding-right: 1.2em;
+    margin-bottom: 30px;
 }
 .profil_parametre{
     position: absolute;

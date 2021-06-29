@@ -50,11 +50,12 @@ ul {
     border-radius: 30px; 
     max-width: 1320px;
     margin: auto;
+    margin-top: 50px;
     
 }
 /* question img */
 .question_img {
-    background-image: url(asset/images/images_question/{{imgQuest}}.pnp);
+    background-image: url(/images/images_question/question_1.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
@@ -89,9 +90,12 @@ ul {
     box-shadow: 0px 5px 0px 0px rgba(4, 4, 6, 0.15);
     background-color: #f8f9fa;
     display: block;
+    margin-bottom: 20px;
 }
+
 input{
     display: none;
+    
 }
 .question_prop:hover,
 input:checked + .question_prop {

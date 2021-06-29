@@ -42,6 +42,7 @@ ul {
     background-size: cover;
     background-position:bottom;
     min-height: 100vh;
+    margin-top: 150px;
 }
 /* fond blanc */
 .fin_fond{
@@ -50,6 +51,7 @@ ul {
     border-radius: 30px; 
     max-width: 1320px;
     margin: auto;
+    
     
 }
 /* question img */

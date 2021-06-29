@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% include 'base.html.twig' %}
 
 {% block title %}Biome - Les thèmes
 {% endblock %}
@@ -19,129 +19,112 @@
 
 <!--Fin du header-->
 
-	<main>
+<main>
 
-		<div class="container-lg p-3 question_fond question_img"> <div
-			class="row">
-			<!--nombre question-->
-			<div class="col-2">
-				<p class="question_number">{{tour}}/10</p>
-				{# <p class="question_number">Passage : {{ passage }}</p> #}
-			</div>
-			{% if passage == 0 %}
-				<div class="col-sm-8">
-				<p class="question_txt">{{ question.question }}</p>
+<div class="container-lg p-3 question_fond question_img"> <div
+	class="row">
+	<!--nombre question-->
+	<div class="col-2">
+		<p class="question_number">{{tour}}/10</p>
+		{# <p class="question_number">Passage : {{ passage }}</p> #}
+	</div>
+	{% if passage == 0 %}
+		<div class="col-sm-8">
+		<p class="question_txt">{{ question.question }}</p>
 
-				<div
-					class="col-2"><div id="root"></div>
-				</div>
-
-				<!--4 propositions-->
-				<form action="" method="POST">
-					<div class="row gy-3">
-
-						<div class="col-sm-6 gy-5">
-							<div>
-
-								{% for reponse in question.Reponses %}
-
-									<input class="mb-4" id="r{{ reponse.id }}" type="radio" name="selectReponse" required="required" value="{{ reponse.isTrue }}">
-									<label for="r{{ reponse.id }}" class="p-3 border border rounded-pill question_prop">
-										<div>{{ reponse.reponse }}</div>
-									</label>
-
-								{% endfor %}
-
-							</div>
-						</div>
-					</div>
-
-
-					<p class="question_valider">
-						<button class="question_bouton" name="button">Valider<img class="question_icone" src="/images/images_question/valider.png" alt="valider"></button>
-					</p>
-				</form>
-			</div>
-			{% else %}
-
-			{# {% block stylesheets %}
-
-<link rel="stylesheet" href="/css/reponse.css">
-
-{% endblock %} #}
-
-				<div class="container-lg p-3 reponse_fond reponse_img">
-
-		<div class="row">
-			<div class="col-2">
-				<p class="reponse_number"><span>1</span>/10</p>
-			</div>
-			<div class="col-sm-8">
-			
-				<p class="reponse_titre">Vrai !</p>
-				
-				<p class="reponse_titre_bis">Faux !</p
-				<div class="row gy-3">
-
-					<div class="g-5">
-				
-							<p class="reponse_soustitre">Réponse :</p>
-							<p class="reponse_txt"></p>
-					
-					
-					<div class="g-5">
-						
-							<p class="reponse_txt">{{description}}</p>
-						
-					</div>
-
-					
-				</div>
-			</div>
-
+		<div
+			class="col-2"><div id="root"></div>
 		</div>
+
+		<!--4 propositions-->
+		<form action="" method="POST">
+			<div class="row gy-3">
+
+				<div class="col-sm-12 gy-5">
+					<div>
+
+						{% for reponse in question.Reponses %}
+
+							<input class="mb-4" id="r{{ reponse.id }}" type="radio" name="selectReponse" required="required" value="{{ reponse.isTrue }}">
+							<label for="r{{ reponse.id }}" class="p-3 border border rounded-pill question_prop">
+								<div>{{ reponse.reponse }}</div>
+							</label>
+
+						{% endfor %}
+
+					</div>
+				</div>
+			</div>
+
+
+			<p class="question_valider">
+				<button class="question_bouton" name="button">Valider<img class="question_icone" src="/images/images_question/valider.png" alt="valider"></button>
+			</p>
+		</form>
+	</div>
+	{% else %}
+
+
+		<div class="container-lg p-3 reponse_fond reponse_img">
+
+<div class="row">
+	<div class="col-2">
+		<p class="reponse_number">{{tour}}/10</p>
+	</div>
+	<div class="col-sm-8">
+	{% if  reponseIsTrue  %}
+		<p class="reponse_titre" style="font-family: 'muli','sans-serif'; text-align: center; color: #57CB69; font-size: 2.188em; font-weight: 900;" >Vrai !</p>
+		{% else %}
+		<p class="reponse_titre_bis" style="font-family: 'muli','sans-serif'; text-align: center; color: red; font-size: 2.188em; font-weight: 900;">Faux !</p
+		{% endif %}
+		<div class="row gy-3">
+
+	<div class="g-5">
 		
-		
+					
+			
+			
+	<div class="g-5">
+				
+					<p class="reponse_txt" style="font-family: 'muli','sans-serif';
+font-size: 1.25em;
+text-align: center;" >{{description}}</p>
+				
+			</div>
+
+			
+		</div>
 	</div>
 
-		
-			<form action="" method="POST">
-				<p class="question_valider">
-					<div class="reponse_suivante">
-			<button class="question_bouton reponse_questionsuivante" name="button">Question suivante<img class="question_icone" src="/images/images_question/valider.png" alt="valider"></button>
-		</div>
-				</p>
-			</form>
-			{% endif %}
-			
-		</main>
+</div>
 
-		<!--Debut du footer-->
 
-	{% include 'petitFooter.html.twig' %}
+</div>
 
-		<!--Fin du footer-->
+
+	<form action="" method="POST">
+		<p class="question_valider">
+			<div class="reponse_suivante" style="display: inline-block;
+vertical-align: middle;
+text-decoration: none;
+font-family: 'nunito', sans-serif;
+font-size: 1.25em;
+font-weight: 800;
+color: #ff7255;">
+	<button class="question_bouton reponse_questionsuivante" name="button">Question suivante<img class="question_icone" src="/images/images_question/valider.png" alt="valider"></button>
+</div>
+		</p>
+	</form>
+	{% endif %}
+	
+</main>
+
+<!--Debut du footer-->
+
+{% include 'petitFooter.html.twig' %}
+
+<!--Fin du footer-->
 {% endblock %}
 
-		{# 		<div class="row">
-									<div class="col-2">
-										<p class="question_8_number">
-											<div id="root"></div>
-									</div>
-									<div class="col-sm-8 question_8_txt">
-										<p>{{ question.question }}</p><br>
-											#}
-		{# 
-					<form action="" method="POST"> {% for reponse in question.Reponses %}
-		
-						<input id="r1" type="radio" name="selectReponse" required="required" value="{{ reponse.isTrue }}">
-						<label for="r1" class="p-3 border rounded-3 question_8_prop">
-							<div>{{ reponse.reponse }}</div>
-						</label><br>
-		
-					{% endfor %}
-					<button class="validate" name="validate">Valider</button>
-				</div>
-			</body>
-		</div></p></form></main> #}
-	
+
+

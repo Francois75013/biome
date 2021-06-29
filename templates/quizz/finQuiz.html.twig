@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% include 'base.html.twig' %}
 
 {% block stylesheets %}
 
@@ -29,7 +29,7 @@
                     </div>
                 
                     <div class="fin_liens">
-                        <p><a href="{{ path('startQuiz', {'id':quiz.id }) }}" ><span class="fin_rejouer">Rejouer</span></a> 
+                        <p><a href="{{ path('presentationQuiz', {'id':quiz.id }) }}" ><span class="fin_rejouer">Rejouer</span></a> 
                         <a class="fin_jouerautre" href="{{ path('themes') }}"><span>Jouer à un autre quiz</span></a></p>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
 
         <!--Debut du footer-->
     
-         
+         {% include 'petitFooter.html.twig' %}
     
         <!--Fin du footer-->
 

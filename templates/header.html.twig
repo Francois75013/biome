@@ -1,28 +1,28 @@
 <div class="header-fixed-home">
-        <div class="container">
-          <header class="header-accueil">
-            <input class="menu-btn" type="checkbox" id="menu-btn"/>
-            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-            <a href="{{ path('home') }}" class="logo"><img src="../images/images_barre_menu/logo_header.png"/></a>
-            <ul class="menu">
-              
-              
-              <li>
-                <div class="flex-search">
-                 <div id="rootQuizz"></div>
-                  <input type="search" id="seach-input" name="search-input" class="search-input"/>
-                </div>
-              </li>
+      <div class="container">
+        <header class="header-accueil">
+          <input class="menu-btn" type="checkbox" id="menu-btn"/>
+          <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+          <a href="{{ path('home') }}" class="logo"><img src="../images/images_barre_menu/logo_header.png"/></a>
+          <ul class="menu">
             
-              
-              <li><a href="{{ path('parents') }}">Pour les parents</a></li>
-              <li><a {% if app.user is null %}href="{{ path('security') }}"{% else %} href="{{ path('user') }}"{% endif %}>Mon profil</a></li>
-			
-	
-		
+            
+            <li>
+              <div class="flex-search">
+                <div id="rootQuizz"></div>
+                <input type="search" id="seach-input" name="search-input" class="search-input"/>
+              </div>
+            </li>
+          
+            
+            <li><a href="{{ path('parents') }}">Pour les parents</a></li>
+            <li><a {% if app.user is null %}href="{{ path('security') }}"{% else %} href="{{ path('user') }}"{% endif %}>Mon profil</a></li>
+    
 
-              <li><a href="{{ path('themes') }}" class="button-accueil">Commencer à jouer</a></li>
-            </ul>
-          </header>
-        </div>
-    </div>
+  
+
+            <li><a href="{{ path('themes') }}" class="button-accueil">Commencer à jouer</a></li>
+          </ul>
+        </header>
+      </div>
+  </div>
